@@ -1,0 +1,997 @@
+[
+  {
+    "subject": "数学",
+    "stage": "基礎",
+    "role": "main",
+    "title": "数学I・A 基礎問題精講",
+    "publisher": "旺文社",
+    "author": "上園信武",
+    "edition": "六訂版 2022年",
+    "isbn13": "9784010349182",
+    "who": "教科書の例題はわかるが、入試の基本問題になると手が止まる人向けです。どの志望校タイプでも、ここが固まっていないと次の段階が空回りします。",
+    "when": "高1の夏から始めて、高2の春までに例題を何も見ずに解ける状態にします。",
+    "pitfall": "これだけで入試に足りると考えてしまうことです。偏差値55〜60あたりで伸びが止まるという指摘があり、終えたら標準の段階へ進みます。",
+    "sources": [
+      "https://study-search.jp/columns/671",
+      "https://gentosha-go.com/articles/-/26558",
+      "https://shotosha.com/medical-school/textbook/math-2",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784010349182",
+      "https://www.maruzenjunkudo.co.jp/products/9784010349182"
+    ]
+  },
+  {
+    "subject": "数学",
+    "stage": "基礎",
+    "role": "main",
+    "title": "数学II・B+ベクトル 基礎問題精講",
+    "publisher": "旺文社",
+    "author": "上園信武",
+    "edition": "六訂版 2023年",
+    "isbn13": "9784010349199",
+    "who": "教科書の例題はわかるが、入試の基本問題になると手が止まる人向けです。どの志望校タイプでも、ここが固まっていないと次の段階が空回りします。",
+    "when": "高2の春から始めて、高2の冬までに例題を一通り解ける状態にします。ベクトルは新課程で数学Cに移りましたが、この巻に入っています。",
+    "pitfall": "これだけで入試に足りると考えてしまうことです。偏差値55〜60あたりで伸びが止まるという指摘があり、終えたら標準の段階へ進みます。",
+    "sources": [
+      "https://study-search.jp/columns/671",
+      "https://gentosha-go.com/articles/-/26558",
+      "https://shotosha.com/medical-school/textbook/math-2",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784010349199",
+      "https://www.maruzenjunkudo.co.jp/products/9784010349199"
+    ]
+  },
+  {
+    "subject": "数学",
+    "stage": "基礎",
+    "role": "main",
+    "title": "数学III・C 基礎問題精講",
+    "publisher": "旺文社",
+    "author": "上園信武",
+    "edition": "五訂版 2024年",
+    "isbn13": "9784010349205",
+    "who": "教科書の例題はわかるが、入試の基本問題になると手が止まる人向けです。どの志望校タイプでも、ここが固まっていないと次の段階が空回りします。",
+    "when": "数学IIIを学校で習い始めたら並行して進め、高3の春までに例題を一通り終えます。学校の進度が遅いときは、高2の冬から自分で始めます。",
+    "pitfall": "これだけで入試に足りると考えてしまうことです。偏差値55〜60あたりで伸びが止まるという指摘があり、終えたら標準の段階へ進みます。",
+    "sources": [
+      "https://study-search.jp/columns/671",
+      "https://gentosha-go.com/articles/-/26558",
+      "https://shotosha.com/medical-school/textbook/math-2",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784010349205",
+      "https://www.maruzenjunkudo.co.jp/products/9784010349205"
+    ]
+  },
+  {
+    "subject": "数学",
+    "stage": "標準",
+    "role": "main",
+    "title": "チャート式 基礎からの数学I+A",
+    "publisher": "数研出版",
+    "author": "チャート研究所",
+    "edition": "改訂版 2026年",
+    "isbn13": "9784410105791",
+    "who": "教科書と基礎問題精講の例題が解ける人が、入試の典型問題をもれなく押さえるための1冊です。旧帝や二次の比重が高い大学を受けるなら、ここで穴をなくしておくことが前提になります。私立や地方国立で共通テストの比重が高い大学なら、例題とコンパスの数が少ないものに絞っても足ります。",
+    "when": "高1から高2の夏までに例題を一通り終え、解けなかった例題を2周目で潰します。",
+    "pitfall": "全問を解こうとして時間切れになることです。例題を中心に、解けなかったものだけ繰り返します。途中で別の網羅系に乗り換えるのも、いちばん多い失敗です。",
+    "sources": [
+      "https://study-search.jp/columns/671",
+      "https://www.agaroot.jp/agaroot-medical/column/math-referencebook/",
+      "https://shotosha.com/medical-school/textbook/math-2",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784410105791",
+      "https://www.maruzenjunkudo.co.jp/products/9784410105791"
+    ]
+  },
+  {
+    "subject": "数学",
+    "stage": "標準",
+    "role": "main",
+    "title": "チャート式 基礎からの数学II+B",
+    "publisher": "数研出版",
+    "author": "チャート研究所",
+    "edition": "新課程版 2022年",
+    "isbn13": "9784410105883",
+    "who": "教科書と基礎問題精講の例題が解ける人が、入試の典型問題をもれなく押さえるための1冊です。旧帝や二次の比重が高い大学を受けるなら、ここで穴をなくしておくことが前提になります。私立や地方国立で共通テストの比重が高い大学なら、例題とコンパスの数が少ないものに絞っても足ります。",
+    "when": "高2の春から夏までに例題を一通り終えます。",
+    "pitfall": "全問を解こうとして時間切れになることです。例題を中心に、解けなかったものだけ繰り返します。途中で別の網羅系に乗り換えるのも、いちばん多い失敗です。",
+    "sources": [
+      "https://study-search.jp/columns/671",
+      "https://www.agaroot.jp/agaroot-medical/column/math-referencebook/",
+      "https://shotosha.com/medical-school/textbook/math-2",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784410105883",
+      "https://www.maruzenjunkudo.co.jp/products/9784410105883"
+    ]
+  },
+  {
+    "subject": "数学",
+    "stage": "標準",
+    "role": "main",
+    "title": "チャート式 基礎からの数学III+C",
+    "publisher": "数研出版",
+    "author": "チャート研究所",
+    "edition": "新課程版 2023年",
+    "isbn13": "9784410105951",
+    "who": "教科書と基礎問題精講の例題が解ける人が、入試の典型問題をもれなく押さえるための1冊です。旧帝や二次の比重が高い大学を受けるなら、ここで穴をなくしておくことが前提になります。私立や地方国立で共通テストの比重が高い大学なら、例題とコンパスの数が少ないものに絞っても足ります。",
+    "when": "高2の秋から高3の春までに例題を一通り終えます。数学IIIは医学部の二次の中心なので、ここは削りません。",
+    "pitfall": "全問を解こうとして時間切れになることです。例題を中心に、解けなかったものだけ繰り返します。途中で別の網羅系に乗り換えるのも、いちばん多い失敗です。",
+    "sources": [
+      "https://study-search.jp/columns/671",
+      "https://www.agaroot.jp/agaroot-medical/column/math-referencebook/",
+      "https://shotosha.com/medical-school/textbook/math-2",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784410105951",
+      "https://www.maruzenjunkudo.co.jp/products/9784410105951"
+    ]
+  },
+  {
+    "subject": "数学",
+    "stage": "入試レベル",
+    "role": "main",
+    "title": "1対1対応の演習 数学I",
+    "publisher": "東京出版",
+    "author": "東京出版編集部",
+    "edition": "三訂版 2022年",
+    "isbn13": "9784887422636",
+    "who": "網羅系の例題が解けるようになった人が、入試問題として出される形に慣れるための問題集です。薄いので、高3で時間がない人にも回しやすいです。私立医学部の標準的な問題なら、これを仕上げれば対応できるとする記事があります。",
+    "when": "高2の後半から、数学I・Aの網羅系の例題が解けるようになった順に始めます。",
+    "pitfall": "例題だけ読んで演習題を飛ばすことです。演習題を自力で解いてはじめて力になります。また、網羅系が終わらないうちに始めると解説が追えず、かえって遠回りになります。",
+    "sources": [
+      "https://study-search.jp/columns/671",
+      "https://www.agaroot.jp/agaroot-medical/column/math-referencebook/",
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://gentosha-go.com/articles/-/26558",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784887422636",
+      "https://www.maruzenjunkudo.co.jp/products/9784887422636"
+    ]
+  },
+  {
+    "subject": "数学",
+    "stage": "入試レベル",
+    "role": "main",
+    "title": "1対1対応の演習 数学A",
+    "publisher": "東京出版",
+    "author": "東京出版編集部",
+    "edition": "三訂版 2022年",
+    "isbn13": "9784887422643",
+    "who": "網羅系の例題が解けるようになった人が、入試問題として出される形に慣れるための問題集です。薄いので、高3で時間がない人にも回しやすいです。私立医学部の標準的な問題なら、これを仕上げれば対応できるとする記事があります。",
+    "when": "数学Iの巻と並べて進めます。",
+    "pitfall": "例題だけ読んで演習題を飛ばすことです。演習題を自力で解いてはじめて力になります。また、網羅系が終わらないうちに始めると解説が追えず、かえって遠回りになります。",
+    "sources": [
+      "https://study-search.jp/columns/671",
+      "https://www.agaroot.jp/agaroot-medical/column/math-referencebook/",
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://gentosha-go.com/articles/-/26558",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784887422643",
+      "https://www.maruzenjunkudo.co.jp/products/9784887422643"
+    ]
+  },
+  {
+    "subject": "数学",
+    "stage": "入試レベル",
+    "role": "main",
+    "title": "1対1対応の演習 数学II",
+    "publisher": "東京出版",
+    "author": "東京出版編集部",
+    "edition": "三訂版 2023年",
+    "isbn13": "9784887422728",
+    "who": "網羅系の例題が解けるようになった人が、入試問題として出される形に慣れるための問題集です。薄いので、高3で時間がない人にも回しやすいです。私立医学部の標準的な問題なら、これを仕上げれば対応できるとする記事があります。",
+    "when": "高2の冬から高3の春にかけて進めます。",
+    "pitfall": "例題だけ読んで演習題を飛ばすことです。演習題を自力で解いてはじめて力になります。また、網羅系が終わらないうちに始めると解説が追えず、かえって遠回りになります。",
+    "sources": [
+      "https://study-search.jp/columns/671",
+      "https://www.agaroot.jp/agaroot-medical/column/math-referencebook/",
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://gentosha-go.com/articles/-/26558",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784887422728",
+      "https://www.maruzenjunkudo.co.jp/products/9784887422728"
+    ]
+  },
+  {
+    "subject": "数学",
+    "stage": "入試レベル",
+    "role": "main",
+    "title": "1対1対応の演習 数学B",
+    "publisher": "東京出版",
+    "author": "東京出版編集部",
+    "edition": "三訂版 2023年",
+    "isbn13": "9784887422735",
+    "who": "網羅系の例題が解けるようになった人が、入試問題として出される形に慣れるための問題集です。薄いので、高3で時間がない人にも回しやすいです。私立医学部の標準的な問題なら、これを仕上げれば対応できるとする記事があります。",
+    "when": "数列と統計的な推測の巻です。統計的な推測が二次で出る大学は少ないので、志望校の過去問で範囲を確かめてから使います。",
+    "pitfall": "例題だけ読んで演習題を飛ばすことです。演習題を自力で解いてはじめて力になります。また、網羅系が終わらないうちに始めると解説が追えず、かえって遠回りになります。",
+    "sources": [
+      "https://study-search.jp/columns/671",
+      "https://www.agaroot.jp/agaroot-medical/column/math-referencebook/",
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://gentosha-go.com/articles/-/26558",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784887422735",
+      "https://www.maruzenjunkudo.co.jp/products/9784887422735"
+    ]
+  },
+  {
+    "subject": "数学",
+    "stage": "入試レベル",
+    "role": "main",
+    "title": "1対1対応の演習 数学C",
+    "publisher": "東京出版",
+    "author": "東京出版編集部",
+    "edition": "三訂版 2023年",
+    "isbn13": "9784887422773",
+    "who": "網羅系の例題が解けるようになった人が、入試問題として出される形に慣れるための問題集です。薄いので、高3で時間がない人にも回しやすいです。私立医学部の標準的な問題なら、これを仕上げれば対応できるとする記事があります。",
+    "when": "ベクトル、複素数平面、式と曲線の巻です。高3の春から夏にかけて進めます。",
+    "pitfall": "例題だけ読んで演習題を飛ばすことです。演習題を自力で解いてはじめて力になります。また、網羅系が終わらないうちに始めると解説が追えず、かえって遠回りになります。",
+    "sources": [
+      "https://study-search.jp/columns/671",
+      "https://www.agaroot.jp/agaroot-medical/column/math-referencebook/",
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://gentosha-go.com/articles/-/26558",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784887422773",
+      "https://www.maruzenjunkudo.co.jp/products/9784887422773"
+    ]
+  },
+  {
+    "subject": "数学",
+    "stage": "入試レベル",
+    "role": "main",
+    "title": "1対1対応の演習 数学III",
+    "publisher": "東京出版",
+    "author": "東京出版編集部",
+    "edition": "三訂版 2024年",
+    "isbn13": "9784887422797",
+    "who": "網羅系の例題が解けるようになった人が、入試問題として出される形に慣れるための問題集です。薄いので、高3で時間がない人にも回しやすいです。私立医学部の標準的な問題なら、これを仕上げれば対応できるとする記事があります。",
+    "when": "高3の春から夏に進め、夏休みの終わりまでに一通り終えるのが目安です。",
+    "pitfall": "例題だけ読んで演習題を飛ばすことです。演習題を自力で解いてはじめて力になります。また、網羅系が終わらないうちに始めると解説が追えず、かえって遠回りになります。",
+    "sources": [
+      "https://study-search.jp/columns/671",
+      "https://www.agaroot.jp/agaroot-medical/column/math-referencebook/",
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://gentosha-go.com/articles/-/26558",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784887422797",
+      "https://www.maruzenjunkudo.co.jp/products/9784887422797"
+    ]
+  },
+  {
+    "subject": "数学",
+    "stage": "入試レベル",
+    "role": "alt",
+    "title": "理系数学の良問プラチカ 数学I・A・II・B・C",
+    "publisher": "河合出版",
+    "author": "大石隆司",
+    "edition": "四訂版 2023年",
+    "isbn13": "9784777227211",
+    "who": "1対1対応の演習のあとに、入試の良問を通して解いて、問題を見て方針を立てる練習をしたい人向けです。旧帝や二次の比重が高い地方国立を受ける人に向きます。私立専願なら、志望校の過去問に早く入るほうが優先です。",
+    "when": "高3の夏から秋に、過去問と並行して進めます。",
+    "pitfall": "典型解法がまだ身についていないうちに手を出すことです。1問に長く悩みすぎて進まなくなるなら、まだ早いという合図です。",
+    "sources": [
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://osusume.mynavi.jp/7178",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784777227211",
+      "https://www.maruzenjunkudo.co.jp/products/9784777227211"
+    ]
+  },
+  {
+    "subject": "数学",
+    "stage": "入試レベル",
+    "role": "alt",
+    "title": "理系数学の良問プラチカ 数学III・C",
+    "publisher": "河合出版",
+    "author": "続木勝年 宮嶋俊和",
+    "edition": "四訂版 2024年",
+    "isbn13": "9784777227228",
+    "who": "1対1対応の演習のあとに、入試の良問を通して解いて、問題を見て方針を立てる練習をしたい人向けです。旧帝や二次の比重が高い地方国立を受ける人に向きます。私立専願なら、志望校の過去問に早く入るほうが優先です。",
+    "when": "高3の夏から秋に、過去問と並行して進めます。",
+    "pitfall": "典型解法がまだ身についていないうちに手を出すことです。1問に長く悩みすぎて進まなくなるなら、まだ早いという合図です。",
+    "sources": [
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://osusume.mynavi.jp/7178",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784777227228",
+      "https://www.maruzenjunkudo.co.jp/products/9784777227228"
+    ]
+  },
+  {
+    "subject": "数学",
+    "stage": "入試レベル",
+    "role": "alt",
+    "title": "実戦 数学重要問題集 数学I・II・III・A・B・C 理系",
+    "publisher": "数研出版",
+    "author": "数研出版編集部",
+    "edition": "2027年版 2026年11月2日発売予定",
+    "isbn13": "9784410142338",
+    "who": "実際の入試問題を難しさの段階に分けて並べた問題集で、1対1対応の演習の代わりに、入試問題そのものでの演習を積みたい人向けです。旧帝を受けるなら最も難しい段階まで、私立や地方国立なら中ほどの段階までで足ります。",
+    "when": "高3の春から夏に、自分の志望校に合う難しさの段階だけを選んで進めます。毎年版が新しくなりますが、前年版でも中身の大半は同じです。",
+    "pitfall": "全部を解こうとすることです。志望校で出る分野と難しさに絞らないと、過去問に入る時間がなくなります。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/math-referencebook/",
+      "https://www.agaroot.jp/agaroot-medical/column/reference-book/",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784410142338",
+      "https://www.maruzenjunkudo.co.jp/products/9784410142338"
+    ]
+  },
+  {
+    "subject": "数学",
+    "stage": "過去問",
+    "role": "main",
+    "title": "共通テスト過去問研究 数学I,A/II,B,C",
+    "publisher": "教学社",
+    "author": "教学社編集部",
+    "edition": "2027年版 2026年",
+    "isbn13": "9784325273387",
+    "who": "共通テストの数学を受けるすべての人向けです。地方国立や地域枠で共通テストの比重が高い大学を受けるなら、ここで取りこぼすと二次で取り返しにくくなります。",
+    "when": "高2の1月に一度解いて距離を知り、形式に合わせた対策は高3の12月から本格的に始めます。時間内に目標の得点が取れるまで繰り返します。",
+    "pitfall": "二次の勉強が進んでいれば点が取れると思い込み、時間配分の練習をしないことです。共通テストは時間との勝負です。二次の過去問は大学ごとに別の本になるので、志望校の赤本を別に用意します。",
+    "sources": [
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784325273387",
+      "https://www.maruzenjunkudo.co.jp/products/9784325273387"
+    ]
+  },
+  {
+    "subject": "英語",
+    "stage": "基礎・単語",
+    "role": "main",
+    "title": "システム英単語",
+    "publisher": "駿台文庫",
+    "author": "霜康司 刀祢雅彦",
+    "edition": "5訂版 2019年",
+    "isbn13": "9784796111379",
+    "who": "高校の英単語をこれから固める人すべて向けです。短い句の形で覚えるので、意味だけでなく使われ方も一緒に入ります。",
+    "when": "高1から始めて、高2の終わりまでに全体の7〜8割を見てすぐ意味が言える状態にします。",
+    "pitfall": "単語帳だけで覚えきろうとすることです。長文の中で出会い直したときに確かめないと、試験では思い出せません。医学系の単語は過去問で出会ったときに覚えれば足ります。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/english-referencebook/",
+      "https://shotosha.com/medical-school/textbook/english-2",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784796111379",
+      "https://www.maruzenjunkudo.co.jp/products/9784796111379"
+    ]
+  },
+  {
+    "subject": "英語",
+    "stage": "基礎・単語",
+    "role": "alt",
+    "title": "英単語ターゲット1900",
+    "publisher": "旺文社",
+    "author": "ターゲット編集部",
+    "edition": "6訂版 2020年",
+    "isbn13": "9784010346464",
+    "who": "一語一訳でテンポよく回したい人向けです。学校で配られていて、すでに使い慣れているならこちらで十分です。",
+    "when": "システム英単語と同じく、高2の終わりまでに7〜8割を目安にします。",
+    "pitfall": "システム英単語と両方に手を出すことです。どちらか1冊を最後までやります。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/reference-book/",
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784010346464",
+      "https://www.maruzenjunkudo.co.jp/products/9784010346464"
+    ]
+  },
+  {
+    "subject": "英語",
+    "stage": "基礎・文法",
+    "role": "main",
+    "title": "Vintage 英文法・語法",
+    "publisher": "いいずな書店",
+    "author": "篠田重晃 米山達郎",
+    "edition": "4th Edition 2023年",
+    "isbn13": "9784864607803",
+    "who": "文法と語法の問題を一通り解いて、知識の穴を埋めたい人向けです。私立で文法問題が出る大学を受けるなら特に役に立ちます。",
+    "when": "高1の後半から始めて、高2のうちに2周します。2周目は間違えた問題だけを、理由を説明できるまで解き直します。",
+    "pitfall": "全部を完璧にしようとすることです。共通テストには文法だけを問う問題がないので、国公立中心なら半分ほどで読解に移ってもよいという見方もあります。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/english-referencebook/",
+      "https://shotosha.com/medical-school/textbook/english-2",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784864607803",
+      "https://www.maruzenjunkudo.co.jp/products/9784864607803"
+    ]
+  },
+  {
+    "subject": "英語",
+    "stage": "基礎・文法",
+    "role": "alt",
+    "title": "Next Stage 英文法・語法問題",
+    "publisher": "桐原書店",
+    "author": "瓜生豊 篠田重晃",
+    "edition": "4th Edition 新装版 2025年",
+    "isbn13": "9784342431180",
+    "who": "Vintageと同じ役割の問題集です。学校で配られているならこちらで構いません。",
+    "when": "Vintageと同じく、高2のうちに2周します。",
+    "pitfall": "答えの番号だけを覚えて、なぜその答えになるかを説明できないまま進むことです。",
+    "sources": [
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://shotosha.com/medical-school/textbook/english-2",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784342431180",
+      "https://www.maruzenjunkudo.co.jp/products/9784342431180"
+    ]
+  },
+  {
+    "subject": "英語",
+    "stage": "標準・英文解釈",
+    "role": "main",
+    "title": "入門英文解釈の技術70",
+    "publisher": "桐原書店",
+    "author": "桑原信淑",
+    "edition": "音声オンライン提供版 2024年",
+    "isbn13": "9784342210136",
+    "who": "単語と文法は一通り終えたが、長い文になると構造がつかめない人向けです。英文和訳を課す国公立を受けるなら、どのタイプでも通っておきたい段階です。",
+    "when": "高2の後半から高3の春にかけて進め、収録された英文を構造を説明しながら訳せる状態を目安に終えます。",
+    "pitfall": "この段階を飛ばして長文に進むことです。いちばん多い失敗とされています。",
+    "sources": [
+      "https://www.goukaku-tensi.info/content-benkyouhou-english-igakubu.html",
+      "https://studychain.jp/media/english-books-roots/",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784342210136",
+      "https://www.maruzenjunkudo.co.jp/products/9784342210136"
+    ]
+  },
+  {
+    "subject": "英語",
+    "stage": "標準・英文解釈",
+    "role": "alt",
+    "title": "基礎英文解釈の技術100",
+    "publisher": "桐原書店",
+    "author": "桑原信淑 杉野隆",
+    "edition": "音声オンライン提供版 2024年",
+    "isbn13": "9784342210112",
+    "who": "入門編が楽に感じる人、または旧帝や和訳の配点が大きい大学を受ける人向けの一段上の本です。",
+    "when": "入門編のあと、高3の春から夏にかけて進めます。",
+    "pitfall": "入門編と並行して両方を中途半端に進めることです。どちらか1冊を終えてから次へ進みます。",
+    "sources": [
+      "https://www.goukaku-tensi.info/content-benkyouhou-english-igakubu.html",
+      "https://studychain.jp/media/english-books-roots/",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784342210112",
+      "https://www.maruzenjunkudo.co.jp/products/9784342210112"
+    ]
+  },
+  {
+    "subject": "英語",
+    "stage": "入試レベル・長文",
+    "role": "main",
+    "title": "やっておきたい英語長文500",
+    "publisher": "河合出版",
+    "author": "杉山俊一 塚越友幸 山下博子",
+    "edition": "改訂版 2023年",
+    "isbn13": "9784777227464",
+    "who": "英文解釈を終えて、入試の長さの文章を時間内に読む練習をしたい人向けです。私立と地方国立の標準的な長文に合います。",
+    "when": "高3の春から夏に、1日1題のペースで進めます。読み終えたら音読し、知らなかった語を単語帳で確かめます。",
+    "pitfall": "解きっぱなしにすることです。解説で構造を確かめ、読めなかった文を自分で訳し直さないと伸びません。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/english-referencebook/",
+      "https://www.agaroot.jp/agaroot-medical/column/reference-book/",
+      "https://shotosha.com/medical-school/textbook/english-2",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784777227464",
+      "https://www.maruzenjunkudo.co.jp/products/9784777227464"
+    ]
+  },
+  {
+    "subject": "英語",
+    "stage": "入試レベル・長文",
+    "role": "alt",
+    "title": "やっておきたい英語長文300",
+    "publisher": "河合出版",
+    "author": "杉山俊一 塚越友幸 山下博子",
+    "edition": "改訂版 2023年",
+    "isbn13": "9784777227457",
+    "who": "500の文章がまだ重く感じる人向けの一段下の本です。",
+    "when": "高3の春に始め、終えたら500へ進みます。",
+    "pitfall": "300で止まってしまうことです。医学部の長文には足りないので、500まで進みます。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/english-referencebook/",
+      "https://shotosha.com/medical-school/textbook/english-2",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784777227457",
+      "https://www.maruzenjunkudo.co.jp/products/9784777227457"
+    ]
+  },
+  {
+    "subject": "英語",
+    "stage": "入試レベル・長文",
+    "role": "alt",
+    "title": "やっておきたい英語長文700",
+    "publisher": "河合出版",
+    "author": "杉山俊一 塚越友幸 山下博子",
+    "edition": "改訂版 2023年",
+    "isbn13": "9784777227471",
+    "who": "500を終えて、旧帝や長文の分量が多い私立を受ける人向けです。",
+    "when": "高3の夏から秋に、過去問と並行して進めます。",
+    "pitfall": "志望校の文章がそこまで長くないのに取り組んで、過去問に入る時間を削ることです。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/reference-book/",
+      "https://shotosha.com/medical-school/textbook/english-2",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784777227471",
+      "https://www.maruzenjunkudo.co.jp/products/9784777227471"
+    ]
+  },
+  {
+    "subject": "英語",
+    "stage": "入試レベル・英作文",
+    "role": "main",
+    "title": "ドラゴン・イングリッシュ基本英文100",
+    "publisher": "講談社",
+    "author": "竹岡広信",
+    "edition": "改訂新版 2021年",
+    "isbn13": "9784065246948",
+    "who": "和文英訳と自由英作文の土台になる例文を覚えたい人向けです。二次で英作文を課す国公立を受けるなら、どのタイプでも役に立ちます。",
+    "when": "高3の春から始め、夏までに100の例文を日本語から英語で言える状態にします。",
+    "pitfall": "覚えただけで満足して、自分で書いた英文を人に見てもらわないことです。英作文は添削を受けないと伸びにくい分野です。",
+    "sources": [
+      "https://shotosha.com/medical-school/textbook/english-2",
+      "https://osusume.mynavi.jp/103/",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784065246948",
+      "https://www.maruzenjunkudo.co.jp/products/9784065246948"
+    ]
+  },
+  {
+    "subject": "英語",
+    "stage": "入試レベル・英作文",
+    "role": "alt",
+    "title": "竹岡広信の英作文が面白いほど書ける本",
+    "publisher": "KADOKAWA",
+    "author": "竹岡広信",
+    "edition": "改訂版 2024年",
+    "isbn13": "9784046051264",
+    "who": "例文の暗記より先に、日本語をどう英語に置き換えるかの考え方を講義形式で読みたい人向けです。ドラゴン・イングリッシュと同じ著者で、役割が重なるのでどちらか1冊にします。",
+    "when": "高3の春から夏に読み、終えたら過去問の英作文に移ります。",
+    "pitfall": "読んで理解しただけで、自分で書く練習に移らないことです。書いたものは学校の先生などに見てもらいます。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/english-referencebook/",
+      "https://shotosha.com/medical-school/textbook/english-2",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784046051264",
+      "https://api.openbd.jp/v1/get?isbn=9784046051264"
+    ]
+  },
+  {
+    "subject": "英語",
+    "stage": "過去問",
+    "role": "main",
+    "title": "共通テスト過去問研究 英語 リーディング/リスニング",
+    "publisher": "教学社",
+    "author": "教学社編集部",
+    "edition": "2027年版 2026年",
+    "isbn13": "9784325273370",
+    "who": "共通テストの英語を受けるすべての人向けです。リスニングの比重は大学によって違うので、要項で配点を確かめておきます。",
+    "when": "高2の1月に一度解き、高3の秋から冬に形式に合わせて繰り返します。リスニングは毎日少しずつ聞きます。",
+    "pitfall": "本番と同じ時間で解く練習をしないことです。リーディングは量が多く、時間配分を決めておかないと最後まで届きません。",
+    "sources": [
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784325273370",
+      "https://www.maruzenjunkudo.co.jp/products/9784325273370"
+    ]
+  },
+  {
+    "subject": "化学",
+    "stage": "基礎",
+    "role": "main",
+    "title": "鎌田の理論化学の講義",
+    "publisher": "旺文社",
+    "author": "鎌田真彰",
+    "edition": "三訂版 2024年",
+    "isbn13": "9784010352953",
+    "who": "化学の仕組みを理由から理解したい人向けの講義形式の参考書です。理論、無機、有機の3冊に分かれていて、理論を土台にして無機と有機へ進みます。どの志望校タイプでも使えます。",
+    "when": "高2の秋から始め、高3の春までに読み終えます。molの計算と化学平衡は、ここで必ず固めます。",
+    "pitfall": "読んだだけで終えることです。各章を読んだら、学校の傍用問題集で同じ範囲を解いて確かめます。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/chemistry-referencebook/",
+      "https://jena-academy.com/chemistry-textbook-route/",
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784010352953",
+      "https://www.maruzenjunkudo.co.jp/products/9784010352953"
+    ]
+  },
+  {
+    "subject": "化学",
+    "stage": "基礎",
+    "role": "main",
+    "title": "福間の無機化学の講義",
+    "publisher": "旺文社",
+    "author": "福間智人",
+    "edition": "五訂版 2024年",
+    "isbn13": "9784010352960",
+    "who": "化学の仕組みを理由から理解したい人向けの講義形式の参考書です。理論、無機、有機の3冊に分かれていて、理論を土台にして無機と有機へ進みます。どの志望校タイプでも使えます。",
+    "when": "理論の該当範囲を終えてから進め、高3の春から夏までに読み終えます。",
+    "pitfall": "読んだだけで終えることです。各章を読んだら、学校の傍用問題集で同じ範囲を解いて確かめます。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/chemistry-referencebook/",
+      "https://jena-academy.com/chemistry-textbook-route/",
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784010352960",
+      "https://www.maruzenjunkudo.co.jp/products/9784010352960"
+    ]
+  },
+  {
+    "subject": "化学",
+    "stage": "基礎",
+    "role": "main",
+    "title": "鎌田の有機化学の講義",
+    "publisher": "旺文社",
+    "author": "鎌田真彰",
+    "edition": "五訂版 2024年",
+    "isbn13": "9784010352977",
+    "who": "化学の仕組みを理由から理解したい人向けの講義形式の参考書です。理論、無機、有機の3冊に分かれていて、理論を土台にして無機と有機へ進みます。どの志望校タイプでも使えます。",
+    "when": "学校で有機を習い始めたら並行して読み、高3の夏までに終えます。",
+    "pitfall": "読んだだけで終えることです。各章を読んだら、学校の傍用問題集で同じ範囲を解いて確かめます。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/chemistry-referencebook/",
+      "https://jena-academy.com/chemistry-textbook-route/",
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784010352977",
+      "https://www.maruzenjunkudo.co.jp/products/9784010352977"
+    ]
+  },
+  {
+    "subject": "化学",
+    "stage": "基礎",
+    "role": "alt",
+    "title": "化学の新研究",
+    "publisher": "三省堂",
+    "author": "卜部吉庸",
+    "edition": "第3版 2023年",
+    "isbn13": "9784385260945",
+    "who": "最初から通して読む本ではなく、問題集を解いていて理由がわからなかったときに引く辞書として手元に置く本です。旧帝や化学の論述が多い大学を受ける人ほど役に立ちます。",
+    "when": "高3の春以降、問題演習を始めた時期から使います。終える本ではありません。",
+    "pitfall": "最初から通読しようとして挫折することです。厚さが700ページを超えるので、引いて使います。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/chemistry-referencebook/",
+      "https://jena-academy.com/chemistry-textbook-route/",
+      "https://www.agaroot.jp/agaroot-medical/column/reference-book/",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784385260945",
+      "https://www.maruzenjunkudo.co.jp/products/9784385260945"
+    ]
+  },
+  {
+    "subject": "化学",
+    "stage": "標準",
+    "role": "main",
+    "title": "実戦 化学重要問題集 化学基礎・化学",
+    "publisher": "数研出版",
+    "author": "数研出版編集部",
+    "edition": "2027年版 2026年11月2日発売予定",
+    "isbn13": "9784410143373",
+    "who": "講義系の参考書と傍用問題集を終えた人が、入試問題で演習するための問題集です。地方国立と私立ならこの1冊を仕上げることが目標になります。旧帝ならここを終えてから次の段階へ進みます。",
+    "when": "高3の春から夏に1周目、秋に間違えた問題だけの2周目を終えるのが目安です。毎年版が新しくなりますが、前年版でも中身の大半は同じです。",
+    "pitfall": "英語と数学に時間を取られて化学を後回しにし、この段階が秋にずれ込むことです。暗記だけで理由を押さえないまま解き進めるのもよくある失敗です。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/chemistry-referencebook/",
+      "https://jena-academy.com/chemistry-textbook-route/",
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784410143373",
+      "https://www.maruzenjunkudo.co.jp/products/9784410143373"
+    ]
+  },
+  {
+    "subject": "化学",
+    "stage": "標準",
+    "role": "alt",
+    "title": "化学 化学基礎・化学 標準問題精講",
+    "publisher": "旺文社",
+    "author": "鎌田真彰 橋爪健作",
+    "edition": "七訂版 2024年",
+    "isbn13": "9784010352595",
+    "who": "重要問題集と同じ段階で、1問ごとの解説が厚い問題集を好む人向けです。",
+    "when": "高3の春から夏に進めます。",
+    "pitfall": "重要問題集と両方を進めることです。どちらか1冊にします。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/chemistry-referencebook/",
+      "https://jena-academy.com/chemistry-textbook-route/",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784010352595",
+      "https://api.openbd.jp/v1/get?isbn=9784010352595"
+    ]
+  },
+  {
+    "subject": "化学",
+    "stage": "入試レベル",
+    "role": "main",
+    "title": "化学の新演習",
+    "publisher": "三省堂",
+    "author": "卜部吉庸",
+    "edition": "新装改訂版 2026年",
+    "isbn13": "9784385261348",
+    "who": "重要問題集を仕上げたうえで、旧帝や化学が難しい私立を受ける人向けの問題集です。地方国立や共通テストの比重が高い大学なら、全員に必要なわけではありません。",
+    "when": "高3の夏から秋に、重要問題集で間違えた分野と苦手な分野に絞って進めます。",
+    "pitfall": "全問をやろうとすることです。量が多いので、分野を絞って使います。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/chemistry-referencebook/",
+      "https://jena-academy.com/chemistry-textbook-route/",
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784385261348",
+      "https://www.maruzenjunkudo.co.jp/products/9784385261348"
+    ]
+  },
+  {
+    "subject": "化学",
+    "stage": "過去問",
+    "role": "main",
+    "title": "共通テスト過去問研究 化学",
+    "publisher": "教学社",
+    "author": "教学社編集部",
+    "edition": "2027年版 2026年",
+    "isbn13": "9784325273462",
+    "who": "共通テストの化学を受けるすべての人向けです。",
+    "when": "高3の秋から冬に、時間を計って繰り返します。",
+    "pitfall": "知識はあるのに、時間内に解き切る練習をしていないことです。",
+    "sources": [
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784325273462",
+      "https://www.maruzenjunkudo.co.jp/products/9784325273462"
+    ]
+  },
+  {
+    "subject": "物理",
+    "stage": "基礎",
+    "role": "main",
+    "title": "物理のエッセンス 力学・波動",
+    "publisher": "河合出版",
+    "author": "浜島清利",
+    "edition": "五訂版 2023年",
+    "isbn13": "9784777227235",
+    "who": "物理の考え方を、公式の丸暗記ではなく現象から理解したい人向けの入門書です。どの志望校タイプでも最初の1冊になります。",
+    "when": "高2から始め、力学は高2の冬までに例題を自力で解ける状態にします。",
+    "pitfall": "わかったつもりで先へ進むことです。例題を自力で解けるまで繰り返してから次へ進みます。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/physics-textbook/",
+      "https://jena-academy.com/physics-textbook-route/",
+      "https://www.agaroot.jp/agaroot-medical/column/reference-book/",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784777227235",
+      "https://api.openbd.jp/v1/get?isbn=9784777227235"
+    ]
+  },
+  {
+    "subject": "物理",
+    "stage": "基礎",
+    "role": "main",
+    "title": "物理のエッセンス 熱・電磁気・原子",
+    "publisher": "河合出版",
+    "author": "浜島清利",
+    "edition": "五訂版 2023年",
+    "isbn13": "9784777227242",
+    "who": "物理の考え方を、公式の丸暗記ではなく現象から理解したい人向けの入門書です。どの志望校タイプでも最初の1冊になります。",
+    "when": "学校で電磁気が高3の秋になることが多いので、高2の冬から春に自分で進めておきます。",
+    "pitfall": "わかったつもりで先へ進むことです。例題を自力で解けるまで繰り返してから次へ進みます。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/physics-textbook/",
+      "https://jena-academy.com/physics-textbook-route/",
+      "https://www.agaroot.jp/agaroot-medical/column/reference-book/",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784777227242",
+      "https://api.openbd.jp/v1/get?isbn=9784777227242"
+    ]
+  },
+  {
+    "subject": "物理",
+    "stage": "標準",
+    "role": "main",
+    "title": "良問の風 物理 頻出・標準入試問題集",
+    "publisher": "河合出版",
+    "author": "浜島清利",
+    "edition": "三訂版 2023年",
+    "isbn13": "9784777227259",
+    "who": "エッセンスを終えた人が、入試の標準問題で典型的な解き方を固めるための問題集です。地方国立と私立ならこれを完璧にすることが目標になります。",
+    "when": "高3の春から夏に1周目を終え、間違えた問題を秋までに解き直します。",
+    "pitfall": "解き方を覚えるだけで、使う法則を説明できないまま進むことです。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/physics-textbook/",
+      "https://jena-academy.com/physics-textbook-route/",
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://www.agaroot.jp/agaroot-medical/column/reference-book/",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784777227259",
+      "https://api.openbd.jp/v1/get?isbn=9784777227259"
+    ]
+  },
+  {
+    "subject": "物理",
+    "stage": "標準",
+    "role": "alt",
+    "title": "実戦 物理重要問題集 物理基礎・物理",
+    "publisher": "数研出版",
+    "author": "数研出版編集部",
+    "edition": "2027年版 2026年11月2日発売予定",
+    "isbn13": "9784410143175",
+    "who": "良問の風と同じ段階で、実際の入試問題を多く解きたい人向けです。",
+    "when": "高3の春から夏に進めます。毎年版が新しくなりますが、前年版でも中身の大半は同じです。",
+    "pitfall": "良問の風と両方を進めることです。どちらか1冊にします。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/physics-textbook/",
+      "https://jena-academy.com/physics-textbook-route/",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784410143175",
+      "https://api.openbd.jp/v1/get?isbn=9784410143175"
+    ]
+  },
+  {
+    "subject": "物理",
+    "stage": "入試レベル",
+    "role": "main",
+    "title": "名問の森 物理 力学・熱・波動I",
+    "publisher": "河合出版",
+    "author": "浜島清利",
+    "edition": "4訂版 2024年",
+    "isbn13": "9784777227266",
+    "who": "良問の風を終えた人が、複雑な問題を基本の形に分解して解く力をつけるための問題集です。旧帝や物理が難しい私立を受ける人向けです。",
+    "when": "高3の夏から秋に進めます。",
+    "pitfall": "良問の風が固まらないうちに始めることです。解説を読んでも追えない問題が続くなら、一段戻ります。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/physics-textbook/",
+      "https://jena-academy.com/physics-textbook-route/",
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784777227266",
+      "https://api.openbd.jp/v1/get?isbn=9784777227266"
+    ]
+  },
+  {
+    "subject": "物理",
+    "stage": "入試レベル",
+    "role": "main",
+    "title": "名問の森 物理 波動II・電磁気・原子",
+    "publisher": "河合出版",
+    "author": "浜島清利",
+    "edition": "4訂版 2024年",
+    "isbn13": "9784777227273",
+    "who": "良問の風を終えた人が、複雑な問題を基本の形に分解して解く力をつけるための問題集です。旧帝や物理が難しい私立を受ける人向けです。",
+    "when": "高3の夏から秋に進めます。",
+    "pitfall": "良問の風が固まらないうちに始めることです。解説を読んでも追えない問題が続くなら、一段戻ります。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/physics-textbook/",
+      "https://jena-academy.com/physics-textbook-route/",
+      "https://www.medical-labo.com/wp-content/uploads/2026/03/【配布用】26.03.03-オンデマンド-最強の学習法.pdf",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784777227273",
+      "https://api.openbd.jp/v1/get?isbn=9784777227273"
+    ]
+  },
+  {
+    "subject": "物理",
+    "stage": "入試レベル",
+    "role": "alt",
+    "title": "難問題の系統とその解き方 物理 力学・熱・波動",
+    "publisher": "ニュートンプレス",
+    "author": "服部嗣雄",
+    "edition": "新装第3版 2019年",
+    "isbn13": "9784315521535",
+    "who": "名問の森を終えて、さらに上の難しさが出る大学、たとえば東大や京大などの医学部を受ける人向けです。多くの医学部受験生には要りません。",
+    "when": "名問の森のあと、高3の秋以降に志望校の過去問と並べて使います。",
+    "pitfall": "過去問より難しい問題に時間を使い、過去問演習の時間を削ることです。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/physics-textbook/",
+      "https://jena-academy.com/physics-textbook-route/",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784315521535",
+      "https://api.openbd.jp/v1/get?isbn=9784315521535"
+    ]
+  },
+  {
+    "subject": "物理",
+    "stage": "入試レベル",
+    "role": "alt",
+    "title": "難問題の系統とその解き方 物理 電磁気・原子",
+    "publisher": "ニュートンプレス",
+    "author": "服部嗣雄",
+    "edition": "新装第3版 2019年",
+    "isbn13": "9784315521542",
+    "who": "名問の森を終えて、さらに上の難しさが出る大学、たとえば東大や京大などの医学部を受ける人向けです。多くの医学部受験生には要りません。",
+    "when": "名問の森のあと、高3の秋以降に志望校の過去問と並べて使います。",
+    "pitfall": "過去問より難しい問題に時間を使い、過去問演習の時間を削ることです。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/physics-textbook/",
+      "https://jena-academy.com/physics-textbook-route/",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784315521542",
+      "https://api.openbd.jp/v1/get?isbn=9784315521542"
+    ]
+  },
+  {
+    "subject": "物理",
+    "stage": "過去問",
+    "role": "main",
+    "title": "共通テスト過去問研究 物理",
+    "publisher": "教学社",
+    "author": "教学社編集部",
+    "edition": "2027年版 2026年",
+    "isbn13": "9784325273455",
+    "who": "共通テストの物理を受けるすべての人向けです。",
+    "when": "高3の秋から冬に、時間を計って繰り返します。",
+    "pitfall": "二次向けの記述の勉強だけで、選択肢の形式に慣れないまま本番を迎えることです。",
+    "sources": [
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784325273455",
+      "https://www.maruzenjunkudo.co.jp/products/9784325273455"
+    ]
+  },
+  {
+    "subject": "生物",
+    "stage": "基礎",
+    "role": "main",
+    "title": "大森徹の最強講義126講 生物 生物基礎・生物",
+    "publisher": "文英堂",
+    "author": "大森徹",
+    "edition": "2024年",
+    "isbn13": "9784578240891",
+    "who": "生物の知識を、理由とつながりまで含めて理解したい人向けの講義形式の参考書です。800ページを超えるので、通読するより、学校の授業に合わせて該当する講を読む使い方が合います。",
+    "when": "高2から学校の進度に合わせて読み進め、高3の夏までに全範囲を一度読み終えます。",
+    "pitfall": "入試に出ない細かい知識まで覚えようとすることです。問題集で問われた部分を、この本に戻って確かめる使い方が効率的です。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/biology-referencebook/",
+      "https://www.agaroot.jp/agaroot-medical/column/reference-book/",
+      "https://gentosha-go.com/articles/-/72778",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784578240891",
+      "https://api.openbd.jp/v1/get?isbn=9784578240891"
+    ]
+  },
+  {
+    "subject": "生物",
+    "stage": "標準",
+    "role": "main",
+    "title": "理系標準問題集 生物",
+    "publisher": "駿台文庫",
+    "author": "大森徹",
+    "edition": "5訂版 2024年",
+    "isbn13": "9784796117852",
+    "who": "知識を一通り入れた人が、入試の標準問題と知識の論述を練習するための問題集です。地方国立と私立ならこれを仕上げることが目標になります。",
+    "when": "受験年の春から夏、遅くとも7〜9月に1周目を終えます。",
+    "pitfall": "答えを見て納得しただけで次へ進むことです。論述問題は、自分で書いてから解答と比べます。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/biology-referencebook/",
+      "https://www.agaroot.jp/agaroot-medical/column/reference-book/",
+      "https://gentosha-go.com/articles/-/72778",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784796117852",
+      "https://api.openbd.jp/v1/get?isbn=9784796117852"
+    ]
+  },
+  {
+    "subject": "生物",
+    "stage": "標準",
+    "role": "alt",
+    "title": "生物 生物基礎・生物 基礎問題精講",
+    "publisher": "旺文社",
+    "author": "大森徹",
+    "edition": "5訂版 2023年",
+    "isbn13": "9784010352571",
+    "who": "理系標準問題集が重く感じる人が、その前に入試の基本問題で知識を確かめるための問題集です。",
+    "when": "高3の春までに終え、理系標準問題集か標準問題精講へ進みます。",
+    "pitfall": "これだけで医学部の生物に足りると考えることです。",
+    "sources": [
+      "https://gentosha-go.com/articles/-/72778",
+      "https://study-search.jp/columns/757",
+      "https://www.goukaku-tensi.info/content-benkyouhou-biology.html",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784010352571",
+      "https://api.openbd.jp/v1/get?isbn=9784010352571"
+    ]
+  },
+  {
+    "subject": "生物",
+    "stage": "入試レベル",
+    "role": "main",
+    "title": "生物 生物基礎・生物 標準問題精講",
+    "publisher": "旺文社",
+    "author": "石原將弘 山下翠",
+    "edition": "7訂版 2024年",
+    "isbn13": "9784010352601",
+    "who": "標準の問題集を終えて、医学部で多い考察問題と論述を練習したい人向けです。旧帝や生物が難しい私立を受ける人ほど必要になります。",
+    "when": "受験年の9〜11月に、過去問と並行して進めます。",
+    "pitfall": "知識の確認が終わらないうちに始めて、考察の前提でつまずくことです。",
+    "sources": [
+      "https://www.agaroot.jp/agaroot-medical/column/biology-referencebook/",
+      "https://study-search.jp/columns/757",
+      "https://gentosha-go.com/articles/-/72778",
+      "https://www.goukaku-tensi.info/content-benkyouhou-biology.html",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784010352601",
+      "https://api.openbd.jp/v1/get?isbn=9784010352601"
+    ]
+  },
+  {
+    "subject": "生物",
+    "stage": "入試レベル",
+    "role": "alt",
+    "title": "大森徹の生物 記述・論述問題の解法",
+    "publisher": "旺文社",
+    "author": "大森徹",
+    "edition": "改訂版 2025年",
+    "isbn13": "9784010355084",
+    "who": "論述の書き方そのものを型から身につけたい人向けです。志望校で論述の配点が大きいなら役に立ちます。",
+    "when": "受験年の夏から秋に、標準の問題集と並行して進めます。",
+    "pitfall": "解答例を覚えるだけで、自分で書いて採点のポイントと照らし合わせないことです。",
+    "sources": [
+      "https://study-search.jp/columns/757",
+      "https://www.goukaku-tensi.info/content-benkyouhou-biology.html",
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784010355084",
+      "https://api.openbd.jp/v1/get?isbn=9784010355084"
+    ]
+  },
+  {
+    "subject": "生物",
+    "stage": "過去問",
+    "role": "main",
+    "title": "共通テスト過去問研究 生物",
+    "publisher": "教学社",
+    "author": "教学社編集部",
+    "edition": "2027年版 2026年",
+    "isbn13": "9784325273479",
+    "who": "共通テストの生物を受けるすべての人向けです。初めて見る実験の設定を読み取る問題が多いのが特徴です。",
+    "when": "高3の秋から冬に、時間を計って繰り返します。",
+    "pitfall": "知識の暗記だけで臨み、資料やグラフを読む練習をしないことです。",
+    "sources": [
+      "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784325273479",
+      "https://www.maruzenjunkudo.co.jp/products/9784325273479"
+    ]
+  }
+]
