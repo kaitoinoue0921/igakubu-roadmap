@@ -57,6 +57,8 @@ small{font-size:.8em}
 .roadmap thead th.now{background:var(--now);color:#fff}
 /* チェック */
 .goal{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:4px 16px 10px;margin:14px 0}
+.goal .lead{color:var(--ink);font-weight:600;margin:6px 0 4px}
+.goal .why{margin:0 0 8px;line-height:1.8}
 .goal h3{margin:12px 0 4px;display:flex;align-items:baseline;gap:10px}
 .goal.now{border-color:var(--now);box-shadow:0 0 0 2px var(--now-soft)}
 .prog{font-family:inherit;font-size:.8rem;font-weight:500;color:var(--ink-soft)}
