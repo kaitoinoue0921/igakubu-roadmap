@@ -3,6 +3,7 @@
   var st = {};
   try { st = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e) { st = {}; }
   st.checks = st.checks || {};
+  if (st.type && !st.goal) st.goal = 'med'; // 医学部のタイプだけを選んでいた人
   function save(){ try { localStorage.setItem(KEY, JSON.stringify(st)); } catch(e){} }
 
   var now = new Date();
@@ -34,19 +35,58 @@
     return null;
   }
 
-  // 学年とタイプの選択ボタン
+  // 志望による出し分け。目指す先を選んでいないときは全部出す
+  function showTag(tag){
+    if (!st.goal) return true;
+    var med = st.goal === 'med';
+    if (tag === 'med') return med;
+    if (tag === 'nk') return !med;
+    if (tag === 'todai' || tag === 'kyodai' || tag === 'teidai') return st.goal === tag;
+    if (tag === 'ri') return med || st.bunri !== 'bun';
+    if (tag === 'bun') return !med && st.bunri !== 'ri';
+    return true;
+  }
+  function showNote(k){
+    if (!st.goal) return true;
+    if (TYPE_NAME[k]) return st.goal === 'med' && (!st.type || st.type === k);
+    if (st.goal === 'med') return false;
+    if (k === 'tk') return st.goal === 'todai' || st.goal === 'kyodai';
+    if (k === 'todai' || k === 'kyodai' || k === 'teidai') return st.goal === k;
+    if (k === 'bun' || k === 'ri') return showTag(k);
+    return true;
+  }
+  function applyOnly(){
+    var els = document.querySelectorAll('[data-only]');
+    for (var i = 0; i < els.length; i++) els[i].hidden = !showTag(els[i].getAttribute('data-only'));
+  }
+
+  // 学年と志望の選択ボタン。目指す先と文理の行は、医学部のタイプの行の前に足す
+  var PICK_LABEL = {goal:'目指す先', bunri:'文理', type:'医学部のタイプ'};
   function renderPickers(){
+    var trows = document.querySelectorAll('.pick-row[data-pick=type]');
+    for (var t = 0; t < trows.length; t++) {
+      if (trows[t].previousElementSibling && trows[t].previousElementSibling.getAttribute('data-pick') === 'bunri') continue;
+      ['goal', 'bunri'].forEach(function(kind){
+        var d = document.createElement('div');
+        d.className = 'pick-row'; d.setAttribute('data-pick', kind);
+        d.innerHTML = '<span>' + PICK_LABEL[kind] + '</span>';
+        trows[t].parentNode.insertBefore(d, trows[t]);
+      });
+      trows[t].querySelector('span').textContent = PICK_LABEL.type;
+    }
     var rows = document.querySelectorAll('.pick-row');
     for (var i = 0; i < rows.length; i++) {
       var row = rows[i], kind = row.getAttribute('data-pick');
-      var opts = kind === 'grade' ? GRADES : TYPES.concat([['', 'まだ決めていない']]);
-      var cur = kind === 'grade' ? (st.grade || '') : (st.type || '');
+      var opts = kind === 'grade' ? GRADES : kind === 'goal' ? GOALS.concat([['', 'まだ決めていない']])
+        : kind === 'bunri' ? BUNRI.concat([['', 'まだ決めていない']]) : TYPES.concat([['', 'まだ決めていない']]);
+      var cur = st[kind] || '';
+      row.hidden = (kind === 'type' && st.goal !== 'med') || (kind === 'bunri' && (!st.goal || st.goal === 'med'));
       var old = row.querySelectorAll('button'); for (var k = 0; k < old.length; k++) old[k].remove();
       opts.forEach(function(o){
         var b = document.createElement('button');
         b.type = 'button'; b.textContent = o[1];
         b.setAttribute('data-' + kind, o[0]);
-        b.setAttribute('aria-pressed', cur === o[0] && (o[0] !== '' || kind === 'type') ? 'true' : 'false');
+        b.setAttribute('aria-pressed', cur === o[0] && (o[0] !== '' || kind !== 'grade') ? 'true' : 'false');
         row.appendChild(b);
       });
     }
@@ -55,23 +95,23 @@
   function taskList(block){
     var h = '';
     AREAS.forEach(function(a){
-      var tasks = block[a[0]] || [];
-      if (!tasks.length) return;
-      h += '<div class="area"><b>' + esc(a[1]) + '</b><ul class="checks">';
-      tasks.forEach(function(t, i){
-        h += '<li><label><input type="checkbox" data-id="' + block.id + '-' + a[0] + '-' + i + '"><span>' + esc(t) + '</span></label></li>';
+      var li = '';
+      // 行の頭の @印 は志望で出し分ける。チェックのIDは元の並び順のまま
+      (block[a[0]] || []).forEach(function(t, i){
+        var m = /^@(\w+) /.exec(t);
+        if (m) { if (!showTag(m[1])) return; t = t.slice(m[0].length); }
+        li += '<li><label><input type="checkbox" data-id="' + block.id + '-' + a[0] + '-' + i + '"><span>' + esc(t) + '</span></label></li>';
       });
-      h += '</ul></div>';
+      if (li) h += '<div class="area"><b>' + esc(a[1]) + '</b><ul class="checks">' + li + '</ul></div>';
     });
     return h;
   }
   function typeNotes(t){
     if (!t) return '';
     var h = '';
-    TYPES.forEach(function(ty){
-      if (!t[ty[0]]) return;
-      if (st.type && st.type !== ty[0]) return;
-      h += '<p class="tnote"><b>' + esc(ty[1]) + '</b>' + esc(t[ty[0]]) + '</p>';
+    Object.keys(NOTE_NAME).forEach(function(k){
+      if (!t[k] || !showNote(k)) return;
+      h += '<p class="tnote"><b>' + esc(NOTE_NAME[k]) + '</b>' + esc(t[k]) + '</p>';
     });
     return h;
   }
@@ -92,7 +132,7 @@
     var h = '';
     if (b) {
       h += '<p class="now-title">いまは「' + esc(b.label) + '」です</p>';
-      h += taskList(b) + typeNotes(b.t);
+      h += (b.w ? '<p class="lead">' + esc(b.w) + '</p>' : '') + taskList(b) + typeNotes(b.t);
       h += '<p class="note"><a href="plan.html#' + b.id + '">月ごとの計画で前後の月を見る</a>　<a href="units.html">科目の単元ごとの目安を見る</a></p>';
     }
     var goal = document.getElementById('goal-' + col);
@@ -100,13 +140,14 @@
       h += '<h4>' + esc(goal.querySelector('h3').firstChild.textContent.trim()) + 'の目安</h4><ul class="checks">';
       var items = goal.querySelectorAll('li');
       for (var q = 0; q < items.length; q++) {
+        if (items[q].hidden) continue;
         var inp = items[q].querySelector('input');
         h += '<li><label><input type="checkbox" data-id="' + inp.getAttribute('data-id') + '"><span>' + esc(items[q].textContent.trim()) + '</span></label></li>';
       }
       h += '</ul>';
     }
     if (g === 'g3' || g === 'r') {
-      var up = DEADLINES.filter(function(d){ return d.e >= TODAY; })
+      var up = DEADLINES.filter(function(d){ return d.e >= TODAY && (!d.o || showTag(d.o)); })
         .sort(function(a, c){ return a.e < c.e ? -1 : a.e > c.e ? 1 : 0; }).slice(0, 5);
       h += '<h4>次の締切と試験</h4>';
       if (up.length) {
@@ -135,7 +176,7 @@
     PLAN[g].forEach(function(b){
       h += '<section class="block' + (cur && cur.id === b.id ? ' now' : '') + '" id="' + b.id + '"><h3>' + esc(b.label) +
         (cur && cur.id === b.id ? '<span class="badge">いま</span>' : '') + '<span class="prog" data-prog="' + b.id + '"></span></h3>' +
-        taskList(b) + typeNotes(b.t) + '</section>';
+        (b.w ? '<p class="lead">' + esc(b.w) + '</p>' : '') + taskList(b) + typeNotes(b.t) + '</section>';
     });
     box.innerHTML = h;
     var title = document.getElementById('plan-title');
@@ -157,26 +198,30 @@
     var box = document.getElementById('units');
     if (!box) return;
     var key = (location.hash || '').slice(1);
-    if (!UNITS.some(function(u){ return u.key === key; })) key = st.subj || 'math';
+    var list = UNITS.filter(function(u){ return !u.only || showTag(u.only); });
+    if (!list.some(function(u){ return u.key === key; })) key = st.subj || 'math';
+    if (!list.some(function(u){ return u.key === key; })) key = 'math';
     st.subj = key;
     var tabs = '<div class="tabs" role="tablist">';
-    UNITS.forEach(function(u){
+    list.forEach(function(u){
       tabs += '<button type="button" role="tab" data-subj="' + u.key + '" aria-selected="' + (u.key === key) + '">' + esc(u.name) + '</button>';
     });
     tabs += '</div>';
     var u = UNITS.filter(function(x){ return x.key === key; })[0];
-    var h = tabs + '<p>' + esc(u.intro) + '</p>';
+    var h = tabs + '<p>' + esc(u.intro) + '</p>' + typeNotes(u.notes);
     if (u.links) h += '<p class="note">' + u.links.map(function(l){ return '<a href="' + l.href + '" target="_blank" rel="noopener">' + esc(l.text) + '</a>'; }).join('　') + '</p>';
     var no = 0;
     u.groups.forEach(function(gr, gi){
+      if (gr.only && !showTag(gr.only)) return;
       h += '<p class="group-title">' + esc(gr.name) + '</p>';
       gr.items.forEach(function(it, ii){
+        if (it.only && !showTag(it.only)) return;
         no++;
         var id = 'u-' + key + '-' + gi + '-' + ii;
         h += '<div class="unit"><div class="unit-head"><span class="no">' + no + '</span><label><input type="checkbox" data-id="' + id + '"><span>' + esc(it.n) + '</span></label><span class="when" style="font-size:.82rem;color:var(--now);font-weight:700">' + esc(it.when) + '</span></div>';
         h += '<p><span class="lbl">終えた基準</span>' + esc(it.goal) + '</p>';
         if (it.tip) h += '<p><span class="lbl">つまずき</span>' + esc(it.tip) + '</p>';
-        if (it.med) h += '<p class="why"><span class="lbl">医学部では</span>' + esc(it.med) + '</p>';
+        if (it.med && (!st.goal || st.goal === 'med')) h += '<p class="why"><span class="lbl">医学部では</span>' + esc(it.med) + '</p>';
         h += typeNotes(it.t);
         h += unitLinks(it);
         h += '</div>';
@@ -198,13 +243,15 @@
   }
 
   function renderAll(){
-    renderPickers(); renderNow(); renderPlan(); renderUnits(); syncChecks();
+    renderPickers(); applyOnly(); renderNow(); renderPlan(); renderUnits(); syncChecks();
   }
 
   document.addEventListener('click', function(e){
     var b = e.target.closest && e.target.closest('button');
     if (!b) return;
     if (b.hasAttribute('data-grade')) { st.grade = b.getAttribute('data-grade'); save(); renderAll(); }
+    else if (b.hasAttribute('data-goal')) { st.goal = b.getAttribute('data-goal'); save(); renderAll(); }
+    else if (b.hasAttribute('data-bunri')) { st.bunri = b.getAttribute('data-bunri'); save(); renderAll(); }
     else if (b.hasAttribute('data-type')) { st.type = b.getAttribute('data-type'); save(); renderAll(); }
     else if (b.hasAttribute('data-subj')) { st.subj = b.getAttribute('data-subj'); history.replaceState(null, '', '#' + st.subj); save(); renderUnits(); syncChecks(); }
   });

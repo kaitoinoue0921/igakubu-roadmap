@@ -57,7 +57,8 @@
       "https://shotosha.com/medical-school/textbook/math-2",
       "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784010349205",
       "https://www.maruzenjunkudo.co.jp/products/9784010349205"
-    ]
+    ],
+    "only": "ri"
   },
   {
     "subject": "数学",
@@ -117,7 +118,8 @@
       "https://shotosha.com/medical-school/textbook/math-2",
       "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784410105951",
       "https://www.maruzenjunkudo.co.jp/products/9784410105951"
-    ]
+    ],
+    "only": "ri"
   },
   {
     "subject": "数学",
@@ -243,7 +245,8 @@
       "https://gentosha-go.com/articles/-/26558",
       "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784887422797",
       "https://www.maruzenjunkudo.co.jp/products/9784887422797"
-    ]
+    ],
+    "only": "ri"
   },
   {
     "subject": "数学",
@@ -262,7 +265,8 @@
       "https://osusume.mynavi.jp/7178",
       "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784777227211",
       "https://www.maruzenjunkudo.co.jp/products/9784777227211"
-    ]
+    ],
+    "only": "ri"
   },
   {
     "subject": "数学",
@@ -281,7 +285,8 @@
       "https://osusume.mynavi.jp/7178",
       "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784777227228",
       "https://www.maruzenjunkudo.co.jp/products/9784777227228"
-    ]
+    ],
+    "only": "ri"
   },
   {
     "subject": "数学",
@@ -300,7 +305,8 @@
       "https://www.agaroot.jp/agaroot-medical/column/reference-book/",
       "https://ndlsearch.ndl.go.jp/api/opensearch?isbn=9784410142338",
       "https://www.maruzenjunkudo.co.jp/products/9784410142338"
-    ]
+    ],
+    "only": "ri"
   },
   {
     "subject": "数学",
