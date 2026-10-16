@@ -84,12 +84,49 @@
       var old = row.querySelectorAll('button'); for (var k = 0; k < old.length; k++) old[k].remove();
       opts.forEach(function(o){
         var b = document.createElement('button');
-        b.type = 'button'; b.textContent = o[1];
+        b.type = 'button'; b.textContent = o[1].replace(/（.*）/, '');
+        if (b.textContent !== o[1]) b.title = o[1];
         b.setAttribute('data-' + kind, o[0]);
         b.setAttribute('aria-pressed', cur === o[0] && (o[0] !== '' || kind !== 'grade') ? 'true' : 'false');
         row.appendChild(b);
       });
     }
+  }
+
+  // 条件を選び終えたら「高3・旧帝大・理系　変える」の1行にたたむ
+  var editing = false;
+  function pickLabel(kind){
+    var v = st[kind]; if (!v) return '';
+    var list = kind === 'grade' ? GRADES : kind === 'goal' ? GOALS : kind === 'bunri' ? BUNRI : TYPES;
+    var o = list.filter(function(x){ return x[0] === v; })[0];
+    return o ? o[1].replace(/（.*）/, '') : '';
+  }
+  function renderSummary(){
+    var boxes = [];
+    var rows = document.querySelectorAll('.pick-row');
+    for (var i = 0; i < rows.length; i++) if (boxes.indexOf(rows[i].parentNode) < 0) boxes.push(rows[i].parentNode);
+    boxes.forEach(function(box){
+      var hasGrade = !!box.querySelector('.pick-row[data-pick=grade]');
+      var parts = [];
+      if (hasGrade) parts.push(pickLabel('grade'));
+      parts.push(pickLabel('goal'));
+      if (st.goal && st.goal !== 'med') parts.push(pickLabel('bunri'));
+      if (st.goal === 'med') parts.push(pickLabel('type'));
+      parts = parts.filter(Boolean);
+      var done = hasGrade ? !!st.grade : !!st.goal;
+      var sum = box.querySelector('.pick-sum');
+      if (!sum) {
+        sum = document.createElement('div'); sum.className = 'pick-sum';
+        box.insertBefore(sum, box.firstChild);
+        var ok = document.createElement('p'); ok.className = 'pick-done';
+        ok.innerHTML = '<button type="button" data-pickdone>これで決める</button>';
+        var last = box.querySelectorAll('.pick-row'); last = last[last.length - 1];
+        last.parentNode.insertBefore(ok, last.nextSibling);
+      }
+      sum.innerHTML = '<span class="pick-sum-label">表示の条件</span><b>' + esc(parts.join('・') || '未選択') + '</b><button type="button" data-pickedit>変える</button>';
+      box.classList.toggle('picked', done && !editing);
+      box.querySelector('.pick-done').hidden = !done || !editing;
+    });
   }
 
   function taskList(block){
@@ -149,12 +186,20 @@
     el.scrollIntoView({block:'start'});
   }
 
+  var openGoals = {};
   function renderNow(){
     var box = document.getElementById('now-body');
     var g = st.grade;
     var col = colFor(g);
     var marks = document.querySelectorAll('.roadmap [data-col], .goal[data-col]');
     for (var j = 0; j < marks.length; j++) marks[j].classList.toggle('now', !!col && marks[j].getAttribute('data-col') === col);
+    var goals = document.querySelectorAll('.goal[data-col]'), past = !!col;
+    for (var q = 0; q < goals.length; q++) {
+      var c = goals[q].getAttribute('data-col');
+      if (c === col) past = false;
+      goals[q].classList.toggle('past', past);
+      goals[q].classList.toggle('shut', c !== col && !openGoals[c]);
+    }
     if (!box || !g) return;
 
     var b = blockNow(g);
@@ -170,15 +215,16 @@
     }
     if (g === 'g3' || g === 'r') {
       var up = DEADLINES.filter(function(d){ return d.e >= TODAY && (!d.o || showTag(d.o)); })
-        .sort(function(a, c){ return a.e < c.e ? -1 : a.e > c.e ? 1 : 0; }).slice(0, 5);
+        .sort(function(a, c){ return a.e < c.e ? -1 : a.e > c.e ? 1 : 0; }).slice(0, 8);
       h += '<h4>次の締切と試験</h4>';
       if (up.length) {
         h += '<ul class="deadlines">';
-        up.forEach(function(d){
+        up.forEach(function(d, i){
+          if (i === 3) h += '</ul><details class="more-dl"><summary>その先の日程</summary><ul class="deadlines">';
           var when = d.s === d.e ? fmt(d.e) : (d.s <= TODAY ? fmt(d.e) + 'まで' : fmt(d.s) + '〜' + fmt(d.e));
           h += '<li class="' + (daysUntil(d.e) <= 7 ? 'soon' : '') + '"><span class="d">' + when + '</span><span>' + esc(d.t) + (d.n ? '<br><span class="note">' + esc(d.n) + '</span>' : '') + '</span></li>';
         });
-        h += '</ul><p class="note">2027年度入試の日程です。必ず公式の要項で確認してください。</p>';
+        h += '</ul>' + (up.length > 3 ? '</details>' : '') + '<p class="note">2027年度入試の日程です。必ず公式の要項で確認してください。</p>';
       } else {
         h += '<p class="note">このページに載せている2027年度入試の日程は終わりました。新しい年度の日程は各大学の要項で確認してください。</p>';
       }
@@ -265,16 +311,19 @@
   }
 
   function renderAll(){
-    renderPickers(); applyOnly(); renderNow(); renderPlan(); renderUnits(); syncChecks();
+    renderPickers(); renderSummary(); applyOnly(); renderNow(); renderPlan(); renderUnits(); syncChecks();
   }
 
   document.addEventListener('click', function(e){
     var b = e.target.closest && e.target.closest('button');
     if (!b) return;
+    if (b.closest('.pick-row')) editing = true;
     if (b.hasAttribute('data-grade')) { st.grade = b.getAttribute('data-grade'); save(); renderAll(); }
     else if (b.hasAttribute('data-goal')) { st.goal = b.getAttribute('data-goal'); save(); renderAll(); }
     else if (b.hasAttribute('data-bunri')) { st.bunri = b.getAttribute('data-bunri'); save(); renderAll(); }
     else if (b.hasAttribute('data-type')) { st.type = b.getAttribute('data-type'); save(); renderAll(); }
+    else if (b.hasAttribute('data-pickedit')) { editing = true; renderSummary(); }
+    else if (b.hasAttribute('data-pickdone')) { editing = false; renderSummary(); }
     else if (b.hasAttribute('data-subj')) { st.subj = b.getAttribute('data-subj'); history.replaceState(null, '', '#' + st.subj); save(); renderUnits(); syncChecks(); }
   });
   document.addEventListener('change', function(e){
@@ -286,10 +335,19 @@
   document.addEventListener('click', function(e){
     var h = e.target.closest && e.target.closest('h2.fold');
     if (h) setFold(h, h.getAttribute('aria-expanded') !== 'true');
+    var g = e.target.closest && e.target.closest('.goal > h3');
+    if (g) {
+      var sec = g.parentNode, c = sec.getAttribute('data-col');
+      var open = sec.classList.contains('shut');
+      openGoals[c] = open; sec.classList.toggle('shut', !open);
+    }
   });
   document.addEventListener('keydown', function(e){
     if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('h2.fold')) { e.preventDefault(); e.target.click(); }
   });
+  var here = location.pathname.split('/').pop() || 'index.html';
+  var navs = document.querySelectorAll('.nav a');
+  for (var n = 0; n < navs.length; n++) if (navs[n].getAttribute('href') === here) navs[n].setAttribute('aria-current', 'page');
   foldSections();
   renderAll();
   openTarget();

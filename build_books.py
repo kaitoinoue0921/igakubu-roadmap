@@ -9,7 +9,7 @@ def isbn10(i13):
 e = html.escape
 src = open('units.html', encoding='utf8').read()
 head = src[:src.index('<main class="wrap">')]
-head = head.replace('単元ごとの目安', '科目別のおすすめ教材').replace('units.html', 'books.html')
+head = head.replace('単元ごとの目安', '科目別のおすすめ教材').replace('/units.html', '/books.html')
 head = re.sub(r'(<meta name="description" content=")[^"]*', r'\1東大・京大・旧帝大と医学部の受験の数学、英語、化学、物理、生物で、段階ごとに1冊選ぶための教材ガイド。誰に向くか、いつ始めるか、よくある失敗を書いています。', head)
 head = re.sub(r'(<meta property="og:description" content=")[^"]*', r'\1東大・京大・旧帝大と医学部の受験の教材を、段階ごとに1冊選ぶためのガイド。', head)
 subjects = []

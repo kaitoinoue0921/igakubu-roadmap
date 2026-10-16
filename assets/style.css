@@ -162,3 +162,57 @@ h2.fold:hover{color:var(--accent)}
 .pace{background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:6px;padding:10px 14px;margin:12px 0;font-size:.92rem}
 .pace b{display:block;color:var(--accent);font-size:1rem;margin-bottom:2px}
 .pace a{margin-left:6px;white-space:nowrap}
+
+/* 2026-10-17 見やすさの作り替え */
+/* ヘッダー：スマホでもナビを1行にして横にすべらせる */
+.site-head{position:sticky;top:0}
+.site-head .wrap{flex-wrap:nowrap;gap:12px;padding-top:8px;padding-bottom:8px}
+.brand{flex:0 0 auto;margin-right:0}
+.nav{flex:1 1 auto;flex-wrap:nowrap;overflow-x:auto;gap:0 4px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+.nav::-webkit-scrollbar{display:none}
+.nav a{white-space:nowrap;padding:4px 10px;border-radius:999px}
+.nav a[aria-current="page"]{background:var(--surface-2);color:var(--ink);font-weight:700}
+@media(max-width:760px){
+  .site-head .wrap{flex-direction:column;align-items:stretch;gap:2px}
+  .brand{font-size:.95rem}
+  .nav{margin:0 -16px;padding:0 16px}
+  .nav a{padding:3px 10px 3px 0}
+  .nav a[aria-current="page"]{padding:3px 10px}
+  h1{font-size:1.5rem;margin-top:22px}
+  h2{scroll-margin-top:96px}
+  h3,.block,.goal{scroll-margin-top:96px}
+}
+.small-print{font-size:.8rem;margin-top:-8px}
+/* 条件の選択：選び終えたら1行にたたむ */
+.pick-sum{display:none;align-items:center;gap:10px;flex-wrap:wrap}
+.picked .pick-sum{display:flex}
+.picked .pick-row{display:none!important}
+.pick-sum-label{font-size:.8rem;color:var(--ink-soft)}
+.pick-sum b{font-size:1rem}
+.pick-sum button,.pick-done button{font:inherit;font-size:.85rem;padding:2px 12px;border-radius:999px;border:1px solid var(--rule-strong);background:var(--surface);color:var(--ink-soft);cursor:pointer}
+.pick-sum button{margin-left:auto}
+.pick-done{margin:8px 0 0;text-align:right}
+.pick-done button{background:var(--now);border-color:var(--now);color:#fff}
+.now-panel .picked + #now-body,.now-panel .pick-sum ~ #now-body{margin-top:4px}
+@media(max-width:520px){
+  .pick-row{gap:6px;margin:10px 0}
+  .pick-row > span{flex:0 0 100%;min-width:0;font-size:.8rem;color:var(--ink-soft);margin:0}
+  .pick-row button{font-size:.88rem;padding:3px 12px}
+  .now-panel{padding:14px 14px}
+}
+.now-panel{border-color:var(--now);box-shadow:0 0 0 3px var(--now-soft)}
+.countdown{margin:6px 0 2px}
+.now-panel .now-title{margin-top:4px}
+.now-panel h4{margin-top:22px;padding-top:12px;border-top:1px solid var(--rule)}
+details.more-dl summary{font-size:.85rem;color:var(--ink-soft);cursor:pointer;padding:4px 0}
+/* いつまでに何を：いまの時期だけ開く */
+.goal > h3{cursor:pointer;user-select:none}
+.goal > h3::before{content:"";order:9;margin-left:auto;width:.5em;height:.5em;border-right:2px solid var(--ink-soft);border-bottom:2px solid var(--ink-soft);transform:rotate(45deg);align-self:center;transition:transform .15s}
+.goal.shut > h3::before{transform:rotate(-45deg)}
+.goal.shut > :not(h3):not(.lead){display:none}
+.goal.shut{padding-bottom:4px}
+.goal.shut .lead{font-weight:500;color:var(--ink-soft);font-size:.92rem}
+.goal.past{opacity:.6}
+.goal.past:not(.shut){opacity:1}
+.pace{background:var(--surface);font-size:.88rem;padding:8px 14px}
+.pace b{font-size:.95rem}
