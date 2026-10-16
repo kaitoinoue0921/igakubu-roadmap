@@ -120,6 +120,35 @@
   function daysUntil(iso){ return Math.round((new Date(iso + 'T00:00:00') - new Date(TODAY + 'T00:00:00')) / 86400000); }
 
   // トップページ：いまの場所
+  // 7つの時期それぞれの区切りの日。本番は共通テストの初日
+  function colEnd(col){
+    if (col === 'c7') { var k = DEADLINES.filter(function(d){ return d.t === '共通テスト' && d.e >= TODAY; })[0]; return k && k.s; }
+    var m = {c1:3, c2:8, c3:3, c4:6, c5:8, c6:11}[col]; if (!m) return null;
+    var y = now.getFullYear(); if (m < M) y++;
+    return y + '-' + pad(m) + '-' + pad(new Date(y, m, 0).getDate());
+  }
+
+  // トップページは「いつまでに何を」以外の節を見出しだけにして、押すと開く
+  function foldSections(){
+    var main = document.querySelector('main[data-fold]'); if (!main) return;
+    var hs = main.querySelectorAll('h2[id]:not([data-open])');
+    for (var i = 0; i < hs.length; i++) {
+      var h = hs[i], body = document.createElement('div'), n = h.nextElementSibling;
+      body.className = 'fold-body'; body.hidden = true;
+      while (n && n.tagName !== 'H2' && !n.querySelector('h2')) { var nx = n.nextElementSibling; body.appendChild(n); n = nx; }
+      h.parentNode.insertBefore(body, h.nextSibling);
+      h.className += ' fold'; h.tabIndex = 0; h.setAttribute('role', 'button'); h.setAttribute('aria-expanded', 'false');
+    }
+  }
+  function setFold(h, open){ h.nextElementSibling.hidden = !open; h.setAttribute('aria-expanded', String(open)); }
+  function openTarget(){
+    var el = location.hash && document.getElementById(location.hash.slice(1)); if (!el) return;
+    var b = el.classList.contains('fold') ? el.nextElementSibling : el.closest('.fold-body');
+    if (b) setFold(b.previousElementSibling, true);
+    if (el.tagName === 'DETAILS') el.open = true;
+    el.scrollIntoView({block:'start'});
+  }
+
   function renderNow(){
     var box = document.getElementById('now-body');
     var g = st.grade;
@@ -130,21 +159,14 @@
 
     var b = blockNow(g);
     var h = '';
+    var goal = document.getElementById('goal-' + col), end = colEnd(col);
+    if (goal && end) {
+      h += '<p class="countdown"><a href="#goal-' + col + '">「' + esc(goal.querySelector('h3').firstChild.textContent.trim()) + '」</a>まで、あと<b>' + daysUntil(end) + '</b>日</p>';
+    }
     if (b) {
       h += '<p class="now-title">いまは「' + esc(b.label) + '」です</p>';
       h += (b.w ? '<p class="lead">' + esc(b.w) + '</p>' : '') + taskList(b) + typeNotes(b.t);
       h += '<p class="note"><a href="plan.html#' + b.id + '">月ごとの計画で前後の月を見る</a>　<a href="units.html">科目の単元ごとの目安を見る</a></p>';
-    }
-    var goal = document.getElementById('goal-' + col);
-    if (goal) {
-      h += '<h4>' + esc(goal.querySelector('h3').firstChild.textContent.trim()) + 'の目安</h4><ul class="checks">';
-      var items = goal.querySelectorAll('li');
-      for (var q = 0; q < items.length; q++) {
-        if (items[q].hidden) continue;
-        var inp = items[q].querySelector('input');
-        h += '<li><label><input type="checkbox" data-id="' + inp.getAttribute('data-id') + '"><span>' + esc(items[q].textContent.trim()) + '</span></label></li>';
-      }
-      h += '</ul>';
     }
     if (g === 'g3' || g === 'r') {
       var up = DEADLINES.filter(function(d){ return d.e >= TODAY && (!d.o || showTag(d.o)); })
@@ -261,7 +283,17 @@
     st.checks[t.getAttribute('data-id')] = t.checked;
     save(); syncChecks();
   });
+  document.addEventListener('click', function(e){
+    var h = e.target.closest && e.target.closest('h2.fold');
+    if (h) setFold(h, h.getAttribute('aria-expanded') !== 'true');
+  });
+  document.addEventListener('keydown', function(e){
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('h2.fold')) { e.preventDefault(); e.target.click(); }
+  });
+  foldSections();
   renderAll();
+  openTarget();
+  window.addEventListener('hashchange', openTarget);
   // 計画ページでは、いまの時期（またはURLの#で指定した月）へ移動する
   if (document.getElementById('plan')) {
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
