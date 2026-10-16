@@ -142,6 +142,16 @@
     if (title) title.textContent = GRADE_NAME[g] + 'の月ごとの計画';
   }
 
+  // 単元ページから受験数学マップ・受験英語 完全攻略ノートの該当箇所へ
+  var MATH_MAP = 'https://kaitoinoue0921.github.io/todai-math-map/app.html#unit=';
+  var EIGO = 'https://kaitoinoue0921.github.io/eigo-kouryaku/';
+  function unitLinks(it){
+    var a = [];
+    (it.mm || []).forEach(function(u){ a.push('<a href="' + MATH_MAP + encodeURIComponent(u) + '" target="_blank" rel="noopener">数学マップ「' + esc(u) + '」</a>'); });
+    (it.ln || []).forEach(function(l){ a.push('<a href="' + EIGO + l[0] + '.html" target="_blank" rel="noopener">' + esc(l[1]) + '</a>'); });
+    return a.length ? '<p class="unit-links"><span class="lbl">関連</span>' + a.join('　') + '</p>' : '';
+  }
+
   // 単元ページ
   function renderUnits(){
     var box = document.getElementById('units');
@@ -156,7 +166,7 @@
     tabs += '</div>';
     var u = UNITS.filter(function(x){ return x.key === key; })[0];
     var h = tabs + '<p>' + esc(u.intro) + '</p>';
-    if (u.link) h += '<p class="note"><a href="' + u.link.href + '" target="_blank" rel="noopener">' + esc(u.link.text) + '</a></p>';
+    if (u.links) h += '<p class="note">' + u.links.map(function(l){ return '<a href="' + l.href + '" target="_blank" rel="noopener">' + esc(l.text) + '</a>'; }).join('　') + '</p>';
     var no = 0;
     u.groups.forEach(function(gr, gi){
       h += '<p class="group-title">' + esc(gr.name) + '</p>';
@@ -168,6 +178,7 @@
         if (it.tip) h += '<p><span class="lbl">つまずき</span>' + esc(it.tip) + '</p>';
         if (it.med) h += '<p class="why"><span class="lbl">医学部では</span>' + esc(it.med) + '</p>';
         h += typeNotes(it.t);
+        h += unitLinks(it);
         h += '</div>';
       });
     });

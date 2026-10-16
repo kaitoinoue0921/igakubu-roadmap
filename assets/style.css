@@ -133,3 +133,5 @@ footer{margin:60px 0 40px;padding-top:16px;border-top:1px solid var(--rule)}
 .card b{display:block;font-family:"Shippori Mincho",serif;font-size:1.02rem}
 .card span{font-size:.88rem;color:var(--ink-soft)}
 .card:hover{border-color:var(--now)}
+.unit-links{font-size:.88rem}
+.unit-links a{white-space:nowrap}
