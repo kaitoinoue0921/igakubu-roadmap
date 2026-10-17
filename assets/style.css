@@ -159,6 +159,7 @@ h2.fold::after{content:"＋";color:var(--ink-soft);font-weight:400}
 h2.fold[aria-expanded="true"]::after{content:"－"}
 h2.fold:hover{color:var(--accent)}
 .fold-body{padding:4px 0 24px}
+.fold-desc{display:block;font-size:.82rem;font-weight:400;color:var(--ink-soft);margin-top:2px}
 .pace{background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:6px;padding:10px 14px;margin:12px 0;font-size:.92rem}
 .pace b{display:block;color:var(--accent);font-size:1rem;margin-bottom:2px}
 .pace a{margin-left:6px;white-space:nowrap}

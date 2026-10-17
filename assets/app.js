@@ -174,6 +174,9 @@
       body.className = 'fold-body'; body.hidden = true;
       while (n && n.tagName !== 'H2' && !n.querySelector('h2')) { var nx = n.nextElementSibling; body.appendChild(n); n = nx; }
       h.parentNode.insertBefore(body, h.nextSibling);
+      var ds = h.getAttribute('data-desc');
+      if (ds) { var t = document.createElement('span'), dsc = document.createElement('span'); dsc.className = 'fold-desc'; dsc.textContent = ds;
+        while (h.firstChild) t.appendChild(h.firstChild); t.appendChild(dsc); h.appendChild(t); }
       h.className += ' fold'; h.tabIndex = 0; h.setAttribute('role', 'button'); h.setAttribute('aria-expanded', 'false');
     }
   }
