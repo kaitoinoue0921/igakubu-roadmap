@@ -189,6 +189,21 @@
     el.scrollIntoView({block:'start'});
   }
 
+  // 同じ時期に大手塾の塾生がやっていること。既卒は高3と同じものを出す
+  function jukuNow(g){
+    var list = JUKU[g === 'r' ? 'g3' : g], e = null;
+    for (var i = 0; list && i < list.length; i++) if (list[i].m.indexOf(M) >= 0) e = list[i];
+    if (!e) return '';
+    var li = '';
+    e.items.forEach(function(t){
+      var m = /^@(\w+) /.exec(t);
+      if (m) { if (!showTag(m[1])) return; t = t.slice(m[0].length); }
+      li += '<li>' + esc(t) + '</li>';
+    });
+    return '<div class="juku"><p class="juku-title">同じころ、大手塾の塾生は</p><ul>' + li + '</ul>'
+      + '<p class="note">' + esc(JUKU_SRC) + '。追いつけなくても焦らず、上の順番を崩さずに進めてください。</p></div>';
+  }
+
   var openGoals = {};
   function renderNow(){
     var box = document.getElementById('now-body');
@@ -214,6 +229,7 @@
     if (b) {
       h += '<p class="now-title">いまは「' + esc(b.label) + '」です</p>';
       h += (b.w ? '<p class="lead">' + esc(b.w) + '</p>' : '') + taskList(b) + typeNotes(b.t);
+      h += jukuNow(g);
       h += '<p class="note"><a href="plan.html#' + b.id + '">月ごとの計画で前後の月を見る</a>　<a href="units.html">科目の単元ごとの目安を見る</a></p>';
     }
     if (g === 'g3' || g === 'r') {
