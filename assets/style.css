@@ -222,3 +222,31 @@ details.more-dl summary{font-size:.85rem;color:var(--ink-soft);cursor:pointer;pa
 .juku ul{margin:0;padding-left:1.2em}
 .juku li{margin:3px 0}
 .juku .note{margin:8px 0 0}
+
+/* 自分のペース */
+.pace-sum{width:100%;border-collapse:collapse;margin:12px 0;font-size:.92rem;background:var(--surface)}
+.pace-sum th,.pace-sum td{border-bottom:1px solid var(--rule);padding:6px 8px;text-align:left;font-variant-numeric:tabular-nums}
+.pace-sum td.late{color:var(--accent);font-weight:700}
+.linkish{background:none;border:0;padding:0;font:inherit;color:var(--accent);text-decoration:underline;cursor:pointer}
+.memo{display:block;margin:14px 0}
+.memo span{display:block;font-size:.88rem;color:var(--ink-soft);margin-bottom:4px}
+.memo textarea,.log-form textarea,.log-form input,.prow select,.prow input{font:inherit;font-size:.92rem;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:6px 8px;box-sizing:border-box;max-width:100%}
+.memo textarea{width:100%}
+.prow{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;justify-content:space-between;padding:8px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);margin:6px 0}
+.prow.is-done{background:var(--ok-soft)}
+.pname{display:flex;flex-direction:column;min-width:0}
+.pname .when{font-size:.78rem;color:var(--now);font-weight:700}
+.pctl{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.verdict{font-size:.82rem;color:var(--ink-soft)}
+.verdict.ok{color:var(--ok);font-weight:700}
+.verdict.late{color:var(--accent);font-weight:700}
+.verdict.soon{color:var(--now);font-weight:700}
+.log-form{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;margin:8px 0}
+.log-form textarea{flex:1 1 240px}
+.log-form button{font:inherit;padding:6px 14px;border-radius:6px;border:1px solid var(--now);background:var(--now);color:#fff;cursor:pointer}
+.log{list-style:none;padding:0;margin:10px 0}
+.log li{display:flex;gap:10px;align-items:baseline;border-bottom:1px solid var(--rule);padding:6px 0}
+.log .d{flex:0 0 6.5em;font-variant-numeric:tabular-nums;color:var(--ink-soft);font-size:.86rem}
+.log .t{flex:1;white-space:pre-wrap;min-width:0}
+.log .linkish{font-size:.8rem}
+.pace-sum thead th{white-space:nowrap;font-size:.82rem;color:var(--ink-soft)}

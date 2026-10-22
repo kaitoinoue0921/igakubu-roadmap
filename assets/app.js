@@ -191,7 +191,7 @@
 
   // 同じ時期に大手塾の塾生がやっていること。既卒は高3と同じものを出す
   function jukuNow(g){
-    var list = JUKU[g === 'r' ? 'g3' : g], e = null;
+    var list = JUKU[g], e = null;
     for (var i = 0; list && i < list.length; i++) if (list[i].m.indexOf(M) >= 0) e = list[i];
     if (!e) return '';
     var li = '';
@@ -201,7 +201,7 @@
       li += '<li>' + esc(t) + '</li>';
     });
     return '<div class="juku"><p class="juku-title">同じころ、大手塾の塾生は</p><ul>' + li + '</ul>'
-      + '<p class="note">' + esc(JUKU_SRC) + '。追いつけなくても焦らず、上の順番を崩さずに進めてください。</p></div>';
+      + '<p class="note">' + esc(g === 'r' ? JUKU_SRC.r : JUKU_SRC.def) + '。追いつけなくても焦らず、上の順番を崩さずに進めてください。</p></div>';
   }
 
   var openGoals = {};
@@ -317,6 +317,104 @@
     box.innerHTML = h;
   }
 
+  // 自分のペースのページ。単元ごとの状態と終えた月、科目ごとのメモ、日々の記録を st に持つ
+  st.pace = st.pace || {}; st.paceMemo = st.paceMemo || {}; st.log = st.log || [];
+  function acad(m){ return m >= 4 ? m - 4 : m + 8; } // 4月を0とした学年内の月
+  function curIdx(){
+    var g = st.grade; if (!g) return null;
+    return (g === 'r' ? 3 : +g.slice(1) - 1) * 12 + acad(M);
+  }
+  // 単元の目安（when）から、終えるべき月を学年通しの番号で出す。続けて取り組む単元は null
+  function dueIdx(w){
+    var gs = w.match(/高(\d)/g); if (!gs) return null;
+    var last = w.lastIndexOf(gs[gs.length - 1]), g = +gs[gs.length - 1].slice(1), rest = w.slice(last + 2);
+    if (/〜\s*$|〜（|毎日/.test(w)) return null;
+    if (/秋/.test(rest)) return (g - 1) * 12 + acad(11);
+    var ms = rest.match(/(\d+)月/g);
+    if (!ms) { var nums = rest.match(/\d+/g); if (!nums) return (g - 1) * 12 + 11; ms = [nums[nums.length - 1] + '月']; }
+    return (g - 1) * 12 + acad(parseInt(ms[ms.length - 1], 10));
+  }
+  function monthsAgo(ym){
+    var p = ym.split('-'); return (now.getFullYear() - p[0]) * 12 + (M - p[1]);
+  }
+  function paceOf(id){
+    var r = st.pace[id];
+    if (r) return r;
+    return st.checks[id] ? {s:'done'} : {s:'todo'};
+  }
+  function verdict(rec, due, cur){
+    if (due === null) return ['', '続けて取り組む単元'];
+    if (cur === null) return ['', ''];
+    if (rec.s === 'done') {
+      if (!rec.d) return ['ok', '終えた月を入れると、目安との差を出します'];
+      var diff = due - (cur - monthsAgo(rec.d));
+      return diff > 0 ? ['ok', '目安より' + diff + 'か月早く終えた'] : diff === 0 ? ['ok', '目安どおりに終えた'] : ['late', '目安より' + (-diff) + 'か月遅れて終えた'];
+    }
+    if (cur > due) return ['late', '目安を' + (cur - due) + 'か月過ぎている'];
+    if (cur === due) return ['soon', '今月が目安'];
+    return ['', '目安まであと' + (due - cur) + 'か月'];
+  }
+  function paceUnits(u){
+    var out = [];
+    u.groups.forEach(function(gr, gi){
+      if (gr.only && !showTag(gr.only)) return;
+      gr.items.forEach(function(it, ii){
+        if (it.only && !showTag(it.only)) return;
+        out.push({id:'u-' + u.key + '-' + gi + '-' + ii, it:it, group:gr.name});
+      });
+    });
+    return out;
+  }
+  function renderPace(){
+    var box = document.getElementById('pace');
+    if (!box) return;
+    var cur = curIdx(), g = st.grade;
+    var list = UNITS.filter(function(u){ return !u.only || showTag(u.only); });
+    var key = st.psubj && list.some(function(u){ return u.key === st.psubj; }) ? st.psubj : list[0].key;
+    var h = '';
+    if (!g) h += '<p class="note">学年を選ぶと、単元ごとに目安より早いか遅いかを出します。</p>';
+    // 科目ごとのまとめ
+    h += '<table class="pace-sum"><thead><tr><th>科目</th><th>終えた</th><th>やっている</th><th>目安を過ぎた</th></tr></thead><tbody>';
+    list.forEach(function(u){
+      var us = paceUnits(u), done = 0, doing = 0, late = 0;
+      us.forEach(function(x){
+        var r = paceOf(x.id), d = dueIdx(x.it.when);
+        if (r.s === 'done') done++; else { if (r.s === 'doing') doing++; if (cur !== null && d !== null && cur > d) late++; }
+      });
+      h += '<tr><th><button type="button" class="linkish" data-psubj="' + u.key + '">' + esc(u.name.replace(/（.*）/, '')) + '</button></th><td>' + done + ' / ' + us.length + '</td><td>' + doing + '</td><td' + (late ? ' class="late"' : '') + '>' + late + '</td></tr>';
+    });
+    h += '</tbody></table>';
+    if (g) h += jukuNow(g);
+    // 科目のタブと単元
+    h += '<div class="tabs" role="tablist">';
+    list.forEach(function(u){ h += '<button type="button" role="tab" data-psubj="' + u.key + '" aria-selected="' + (u.key === key) + '">' + esc(u.name) + '</button>'; });
+    h += '</div>';
+    var u = list.filter(function(x){ return x.key === key; })[0];
+    h += '<label class="memo"><span>' + esc(u.name) + 'のいまのペース（自由メモ）</span><textarea data-pmemo="' + u.key + '" rows="3" placeholder="例：青チャートの数列を1日3題。学校は数IIの微分まで。">' + esc(st.paceMemo[u.key] || '') + '</textarea></label>';
+    var lastGroup = '';
+    paceUnits(u).forEach(function(x){
+      if (x.group !== lastGroup) { h += '<p class="group-title">' + esc(x.group) + '</p>'; lastGroup = x.group; }
+      var r = paceOf(x.id), v = verdict(r, dueIdx(x.it.when), cur);
+      h += '<div class="prow' + (r.s === 'done' ? ' is-done' : '') + '"><div class="pname"><span>' + esc(x.it.n) + '</span><span class="when">目安 ' + esc(x.it.when) + '</span></div>'
+        + '<div class="pctl"><select data-pace="' + x.id + '" aria-label="' + esc(x.it.n) + 'の状態">'
+        + [['todo','まだ'],['doing','やっている'],['done','終えた']].map(function(o){ return '<option value="' + o[0] + '"' + (r.s === o[0] ? ' selected' : '') + '>' + o[1] + '</option>'; }).join('')
+        + '</select>'
+        + (r.s === 'done' ? '<input type="month" data-pacem="' + x.id + '" value="' + esc(r.d || '') + '" aria-label="終えた月">' : '')
+        + '<span class="verdict ' + v[0] + '">' + esc(v[1]) + '</span></div></div>';
+    });
+    // 日々の記録
+    h += '<h2>勉強の記録</h2><p class="note">その日にやったこと、進んだ量、気づいたことを書いておくと、ペースが落ちた時期と理由が後から見えます。</p>'
+      + '<div class="log-form"><input type="date" id="log-date" value="' + TODAY + '"><textarea id="log-text" rows="2" placeholder="例：数III 積分の置換 12題。部分積分の符号でミス2回"></textarea><button type="button" data-logadd>記録する</button></div>';
+    if (st.log.length) {
+      h += '<ul class="log">';
+      st.log.slice().sort(function(a, b){ return a.d < b.d ? 1 : a.d > b.d ? -1 : 0; }).forEach(function(e){
+        h += '<li><span class="d">' + esc(e.d) + '</span><span class="t">' + esc(e.t) + '</span><button type="button" class="linkish" data-logdel="' + e.k + '">消す</button></li>';
+      });
+      h += '</ul>';
+    }
+    box.innerHTML = h;
+  }
+
   function syncChecks(){
     var boxes = document.querySelectorAll('input[type=checkbox][data-id]');
     for (var i = 0; i < boxes.length; i++) boxes[i].checked = !!st.checks[boxes[i].getAttribute('data-id')];
@@ -330,7 +428,7 @@
   }
 
   function renderAll(){
-    renderPickers(); renderSummary(); applyOnly(); renderNow(); renderPlan(); renderUnits(); syncChecks();
+    renderPickers(); renderSummary(); applyOnly(); renderNow(); renderPlan(); renderUnits(); renderPace(); syncChecks();
   }
 
   document.addEventListener('click', function(e){
@@ -343,12 +441,32 @@
     else if (b.hasAttribute('data-type')) { st.type = b.getAttribute('data-type'); save(); renderAll(); }
     else if (b.hasAttribute('data-pickedit')) { editing = true; renderSummary(); }
     else if (b.hasAttribute('data-pickdone')) { editing = false; renderSummary(); }
+    else if (b.hasAttribute('data-psubj')) { st.psubj = b.getAttribute('data-psubj'); save(); renderPace(); }
+    else if (b.hasAttribute('data-logadd')) {
+      var tx = document.getElementById('log-text'), dt = document.getElementById('log-date');
+      if (tx && tx.value.trim()) { st.log.push({k: String(Date.now()), d: dt.value || TODAY, t: tx.value.trim()}); save(); renderPace(); }
+    }
+    else if (b.hasAttribute('data-logdel')) {
+      if (confirm('この記録を消しますか')) { var k = b.getAttribute('data-logdel'); st.log = st.log.filter(function(e){ return e.k !== k; }); save(); renderPace(); }
+    }
     else if (b.hasAttribute('data-subj')) { st.subj = b.getAttribute('data-subj'); history.replaceState(null, '', '#' + st.subj); save(); renderUnits(); syncChecks(); }
   });
   document.addEventListener('change', function(e){
     var t = e.target;
+    if (t.matches && t.matches('select[data-pace]')) {
+      var id = t.getAttribute('data-pace'), r = st.pace[id] || {};
+      r.s = t.value;
+      if (r.s !== 'done') delete r.d;
+      st.pace[id] = r; st.checks[id] = r.s === 'done'; save(); renderPace(); return;
+    }
+    if (t.matches && t.matches('input[data-pacem]')) {
+      var pid = t.getAttribute('data-pacem'); st.pace[pid] = st.pace[pid] || {s:'done'}; st.pace[pid].d = t.value; save(); renderPace(); return;
+    }
+    if (t.matches && t.matches('textarea[data-pmemo]')) { st.paceMemo[t.getAttribute('data-pmemo')] = t.value; save(); return; }
     if (!t.matches || !t.matches('input[type=checkbox][data-id]')) return;
-    st.checks[t.getAttribute('data-id')] = t.checked;
+    var cid = t.getAttribute('data-id');
+    st.checks[cid] = t.checked;
+    if (/^u-/.test(cid)) st.pace[cid] = t.checked ? {s:'done', d:(st.pace[cid] || {}).d} : {s:'todo'};
     save(); syncChecks();
   });
   document.addEventListener('click', function(e){
