@@ -1,5 +1,10 @@
 import json, html, re
+from urllib.parse import quote
 TAG = "gadgetlog0921-22"
+RAKUTEN = "58cc0d02.af3f8ff5.58cc0d03.800ac399"
+def rakuten(i13):
+    t = quote(f"https://books.rakuten.co.jp/search?sitem={i13}", safe="")
+    return f"https://hb.afl.rakuten.co.jp/hgc/{RAKUTEN}/?pc={t}&m={t}"
 d = json.load(open('books-data.json', encoding='utf8'))
 def isbn10(i13):
     b = i13[3:12]
@@ -15,7 +20,7 @@ head = re.sub(r'(<meta property="og:description" content=")[^"]*', r'\1東大・
 subjects = []
 for b in d:
     if b['subject'] not in subjects: subjects.append(b['subject'])
-out = [head, '<main class="wrap">\n<h1>科目別のおすすめ教材</h1>\n<p class="lead">教材は「全部やる」のではなく、段階ごとに1冊選んで最後までやるのが前提です。各段階に主力を1冊、代わりになる本を1〜2冊だけ挙げました。複数の予備校や合格体験記の推薦が重なる本だけを選び、書誌はISBNで2か所以上で照合しています。リンクはAmazonへのアフィリエイトリンクです。選ぶ基準は紹介料ではなく、受験生にとって合うかどうかです。</p>\n'
+out = [head, '<main class="wrap">\n<h1>科目別のおすすめ教材</h1>\n<p class="lead">教材は「全部やる」のではなく、段階ごとに1冊選んで最後までやるのが前提です。各段階に主力を1冊、代わりになる本を1〜2冊だけ挙げました。複数の予備校や合格体験記の推薦が重なる本だけを選び、書誌はISBNで2か所以上で照合しています。リンクはAmazonと楽天ブックスへのアフィリエイトリンクで、購入されると紹介料が入ります（PR）。選ぶ基準は紹介料ではなく、受験生にとって合うかどうかです。</p>\n'
        '<section class="now-panel">\n  <div class="pick-row" data-pick="type"><span>志望校</span></div>\n'
        '  <p class="note" data-only="bun">文系を選んでいるので、数学IIIを含む本と、理科（化学・物理・生物）の本を隠しています。国語と地歴の教材はまだ載せていません。</p>\n</section>\n']
 # 文系では理系だけの本と理科の科目を隠す（data-only は assets/app.js が処理する）
@@ -34,7 +39,7 @@ for s in subjects:
             role = '主力' if b['role'] == 'main' else '代わり'
             out.append(f'<div class="card"{only(b.get("only"))}><p><strong>{role}：{e(b["title"])}</strong>　{e(b["publisher"])}／{e(b["author"])}／{e(b["edition"])}</p>\n'
                        f'<p>{e(b["who"])}</p>\n<p>始める時期と目安：{e(b["when"])}</p>\n<p class="fail">{e(b["pitfall"])}</p>\n'
-                       f'<p><a href="{url}" target="_blank" rel="noopener sponsored">Amazonで見る</a></p></div>\n')
-out.append('</section>\n<footer>\n  <p class="note">Amazonのアソシエイトとして、当メディアは適格販売により収入を得ています。教材は版が変わることがあるので、購入前に最新の版か確認してください。</p>\n  <p class="note">出典と作り方は<a href="index.html#method">トップページの最後</a>にあります。</p>\n</footer>\n</main>\n<script src="assets/data.js"></script>\n<script src="assets/app.js"></script>\n</body>\n</html>\n')
+                       f'<p><a href="{url}" target="_blank" rel="noopener sponsored">Amazonで見る</a>　<a href="{rakuten(b['isbn13'])}" target="_blank" rel="noopener sponsored">楽天ブックスで見る</a></p></div>\n')
+out.append('</section>\n<footer>\n  <p class="note">【PR】このページのリンクはアフィリエイトリンクです。Amazonのアソシエイトとして、当メディアは適格販売により収入を得ています。楽天ブックスへのリンクからの購入でも紹介料が入ります。教材は版が変わることがあるので、購入前に最新の版か確認してください。</p>\n  <p class="note">出典と作り方は<a href="index.html#method">トップページの最後</a>にあります。</p>\n</footer>\n</main>\n<script src="assets/data.js"></script>\n<script src="assets/app.js"></script>\n</body>\n</html>\n')
 open('books.html', 'w', encoding='utf8').write(''.join(out))
 print(len(d), 'books')
